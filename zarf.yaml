@@ -1,0 +1,78 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
+kind: ZarfPackageConfig
+metadata:
+  name: sonarqube
+  description:  "UDS Sonarqube package"
+  # x-release-please-start-version
+  version: "8.0.3-1"
+  # x-release-please-end
+  architecture: amd64
+
+variables:
+  - name: SONARQUBE_DEPENDS_ON
+    default: "[]"
+  - name: SONARQUBE_CREATE_NAMESPACE
+    default: "false"
+  - name: DOMAIN
+    default: "uds.dev"
+  - name: SONARQUBE_IDAM_ENABLED
+    default: "false"
+  - name: SONARQUBE_IDAM_CLIENT_ID
+    default: ""
+  - name: SONARQUBE_IDAM_PROVIDER_NAME
+    default: ""
+  - name: SONARQUBE_IDAM_REALM_URL
+    default: ""
+  - name: SONARQUBE_IDAM_SAML_CERT
+    default: ""
+  - name: SONARQUBE_IDAM_ATTR_LOGIN
+    default: ""
+  - name: SONARQUBE_IDAM_ATTR_NAME
+    default: ""
+  - name: SONARQUBE_IDAM_ATTR_EMAIL
+    default: ""
+  - name: SONARQUBE_IDAM_ATTR_GROUP
+    default: ""
+  - name: SONARQUBE_DB_NAME
+    default: "sonarqubedb"
+  - name: SONARQUBE_DB_USERNAME
+    default: "sonarqube"
+  - name: SONARQUBE_DB_ENDPOINT
+    default: "postgres"
+
+components:
+  - name: sonarqube
+    required: true
+    description: "Deploy sonarqube"
+    only:
+      flavor: registry1
+    charts:
+    - name: sonarqube
+      namespace: sonarqube
+      url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
+      gitPath: chart
+      version: "8.0.3-bb.0"
+      valuesFiles:
+        - values/sonarqube-values.yaml
+    images:
+      - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
+      - "registry1.dso.mil/ironbank/big-bang/sonarqube-9:9.9.3-community"
+
+  # Note: upstream-ce flavor is experimental
+  - name: sonarqube
+    required: true
+    description: "Deploy sonarqube"
+    only:
+      flavor: upstream-ce
+    charts:
+    - name: sonarqube
+      namespace: sonarqube
+      url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
+      gitPath: chart
+      version: "8.0.3-bb.0"
+      valuesFiles:
+        - values/sonarqube-values.yaml
+        - values/upstream.yaml
+        - values/ce.yaml
+    images:
+      - "sonarqube:9.9.3-community"

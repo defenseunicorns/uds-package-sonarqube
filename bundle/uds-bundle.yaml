@@ -1,0 +1,16 @@
+kind: UDSBundle
+metadata:
+  name: sonarqube-test
+  description: A UDS bundle for deploying Sonarqube and it's dependencies on a development cluster
+  version: 0.1.0
+
+packages:
+  - name: sonarqube-postgres
+    path: ../
+    ref: 12.6.6-0
+  
+  - name: sonarqube
+    path: ../
+    # x-release-please-start-version
+    ref: 8.0.3-1
+    # x-release-please-end

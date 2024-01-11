@@ -1,0 +1,81 @@
+OpenShift:
+  enabled: false
+
+sonarProperties:
+  sonar.auth.saml.enabled: ###ZARF_VAR_SONARQUBE_IDAM_ENABLED###
+  sonar.core.serverBaseURL: https://sonarqube.###ZARF_VAR_DOMAIN###
+  sonar.auth.saml.applicationId: ###ZARF_VAR_SONARQUBE_IDAM_CLIENT_ID###
+  sonar.auth.saml.providerName: ###ZARF_VAR_SONARQUBE_IDAM_PROVIDER_NAME###
+  sonar.auth.saml.providerId: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###
+  sonar.auth.saml.loginUrl: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###/protocol/saml
+  sonar.auth.saml.certificate.secured: ###ZARF_VAR_SONARQUBE_IDAM_SAML_CERT###
+  sonar.auth.saml.user.login: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_LOGIN###
+  sonar.auth.saml.user.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_NAME###
+  sonar.auth.saml.user.email: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_EMAIL###
+  sonar.auth.saml.group.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_GROUP###
+
+monitoring:
+  enabled: true
+
+#networkPolicies:
+#  enabled: true
+#  ingressLabels:
+#    app: null
+#    istio: null
+#
+#networkPolicy:
+#  enabled: true
+#  additionalNetworkPolicys:
+#    ingress:
+#    - from:
+#      - namespaceSelector:
+#          matchLabels:
+#            kubernetes.io/metadata.name: gitlab-runner-sandbox
+#        podSelector: {}
+#      ports:
+#      - port: 9000
+#        protocol: TCP
+#    egress:
+#    - to:
+#      - namespaceSelector:
+#          matchLabels:
+#            kubernetes.io/metadata.name: gitlab
+#        podSelector:
+#          matchLabels:
+#            app: webservice
+#    - to:
+#      - namespaceSelector:
+#          matchLabels:
+#            kubernetes.io/metadata.name: gitlab-runner-sandbox
+#        podSelector: {}
+#    podSelector:
+#      matchLabels: {}
+#    policyTypes:
+#    - Egress
+#    - Ingress
+
+jdbcOverwrite:
+  enable: true
+  jdbcUrl: jdbc:postgresql://###ZARF_VAR_SONARQUBE_DB_ENDPOINT###:5432/###ZARF_VAR_SONARQUBE_DB_NAME###
+  jdbcUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
+  jdbcSecretName: sonarqube-postgres
+  jdbcSecretPasswordKey: password
+
+postgresql:
+  enabled: false
+  postgresqlServer: ###ZARF_VAR_SONARQUBE_DB_ENDPOINT###
+  existingSecret: "sonarqube-postgres"
+  existingSecretPasswordKey: "password"
+  postgresqlUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
+  postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
+  service:
+    port: 5432
+
+istio:
+  enabled: true
+  sonarqube:
+    gateways:
+    - istio-tenant-gateway/tenant-gateway
+#  injection: enabled
+ 
+domain: ###ZARF_VAR_DOMAIN###

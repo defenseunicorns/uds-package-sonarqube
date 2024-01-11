@@ -1,0 +1,18 @@
+tasks:
+  - name: health-check
+    actions:
+      - description: Sonarqube StatefulSet Health Check
+        wait:
+          cluster:
+            kind: StatefulSet
+            name: sonarqube-sonarqube
+            namespace: sonarqube
+
+  - name: ingress
+    actions:
+      - description: Sonarqube UI Health Check
+        wait:
+          network:
+            protocol: https
+            address: sonarqube.uds.dev
+            code: 200
