@@ -1,6 +1,8 @@
 OpenShift:
   enabled: false
 
+edition: "community"
+
 sonarProperties:
   sonar.auth.saml.enabled: ###ZARF_VAR_SONARQUBE_IDAM_ENABLED###
   sonar.core.serverBaseURL: https://sonarqube.###ZARF_VAR_DOMAIN###
@@ -58,6 +60,7 @@ jdbcOverwrite:
   enable: true
   jdbcUrl: jdbc:postgresql://###ZARF_VAR_SONARQUBE_DB_ENDPOINT###:5432/###ZARF_VAR_SONARQUBE_DB_NAME###
   jdbcUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
+  jdbcPassword: null
   jdbcSecretName: sonarqube-postgres
   jdbcSecretPasswordKey: password
 
