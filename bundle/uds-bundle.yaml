@@ -12,5 +12,5 @@ packages:
   - name: sonarqube
     path: ../
     # x-release-please-start-version
-    ref: 8.0.3-2
+    ref: 8.0.3-3
     # x-release-please-end

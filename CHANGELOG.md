@@ -1,5 +1,17 @@
 # Changelog
 
+## [8.0.3-3](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-2...v8.0.3-3) (2024-01-17)
+
+
+### Features
+
+* pepr for istio virtualsvc setup not chart ([#11](https://github.com/defenseunicorns/uds-package-sonarqube/issues/11)) ([219e9c3](https://github.com/defenseunicorns/uds-package-sonarqube/commit/219e9c3d5b0fbfbbf4b17acbe1218064f8bbc5bc))
+
+
+### Miscellaneous
+
+* release 8.0.3-3 ([33e9dd1](https://github.com/defenseunicorns/uds-package-sonarqube/commit/33e9dd1553cb31d049a59fd93973fc142b6725c0))
+
 ## [8.0.3-2](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-1...v8.0.3-2) (2024-01-16)
 
 
