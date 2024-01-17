@@ -7,8 +7,3 @@ initSysctl:
 
 elasticsearch:
   configureNode: false
-
-service:
-  labels:
-    uds/istio-gateway: tenant
-    uds/istio-host: sonarqube
