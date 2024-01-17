@@ -1,0 +1,15 @@
+apiVersion: uds.dev/v1alpha1
+kind: Package
+metadata:
+  name: sonarqube
+  namespace: {{ .Release.Namespace }}
+spec:
+  network:
+    expose:
+      - service: sonarqube-sonarqube
+        podLabels:
+          app: sonarqube-sonarqube-0
+        gateway: tenant
+        host: sonarqube
+        port: 9000
+
