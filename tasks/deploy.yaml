@@ -7,4 +7,4 @@ tasks:
   - name: sonarqube-test-bundle
     actions:
       - description: Deploy the UDS bundle with Sonarqube and its dependencies
-        cmd: UDS_CONFIG=bundle/uds-config.yaml uds deploy bundle/uds-bundle-sonarqube-test-${UDS_ARCH}-*.tar.zst --confirm --no-progress -l debug
+        cmd: UDS_CONFIG=bundle/uds-config.yaml uds deploy bundle/uds-bundle-sonarqube-test-${UDS_ARCH}-*.tar.zst --confirm --no-progress
