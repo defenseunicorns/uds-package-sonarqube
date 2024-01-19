@@ -73,10 +73,5 @@ postgresql:
   postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
   service:
     port: 5432
-
-service:
-  labels:
-    uds/istio-gateway: tenant
-    uds/istio-host: sonarqube
  
 domain: ###ZARF_VAR_DOMAIN###
