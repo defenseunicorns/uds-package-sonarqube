@@ -53,4 +53,4 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
     
       - name: Publish Package
-        run: uds run -f tasks/publish.yaml package
+        run: uds run -f tasks/publish.yaml package --set FLAVOR=${{ matrix.flavor }}
