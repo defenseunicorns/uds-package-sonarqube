@@ -8,6 +8,9 @@ variables:
     default: "8.0.3-3"
     # x-release-please-end
 
+  - name: FLAVOR
+    default: "registry1"
+
 tasks:
   - name: package
     description: Build and publish the packages
@@ -15,8 +18,10 @@ tasks:
       - description: Create the packages
         cmd: |
           set -e
-          ZARF_ARCHITECTURE=amd64 uds run -f tasks/create.yaml sonarqube-package --no-progress
-          ZARF_ARCHITECTURE=arm64 uds run -f tasks/create.yaml sonarqube-package --no-progress
+          ZARF_ARCHITECTURE=amd64 uds run -f tasks/create.yaml sonarqube-package --no-progress --set FLAVOR=${FLAVOR}
+          if [ ${FLAVOR} != "registry1" ]; then
+            ZARF_ARCHITECTURE=arm64 uds run -f tasks/create.yaml sonarqube-package --no-progress --set FLAVOR=${FLAVOR}
+          fi
       
       - description: Publish the packages
         cmd: |
