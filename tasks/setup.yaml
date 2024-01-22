@@ -1,5 +1,13 @@
+variables:
+  - name: FLAVOR
+
 tasks:
   - name: k3d-test-cluster
     actions:
       - description: Create k3d cluster with UDS Core
-        cmd: uds deploy oci://defenseunicorns/uds/bundles/k3d-core-istio:0.8.0-${UDS_ARCH} --confirm --no-progress
+        cmd: |
+          if [ ${FLAVOR} == 'registry1']; then
+            uds deploy oci://defenseunicorns/uds/bundles/registry1/k3d-core-istio:0.9.1-${UDS_ARCH} --confirm --no-progress
+          else
+            uds deploy oci://defenseunicorns/uds/bundles/upstream/k3d-core-istio:0.9.1-${UDS_ARCH} --confirm --no-progress
+          fi
