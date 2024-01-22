@@ -4,7 +4,7 @@ metadata:
   name: sonarqube
   description:  "UDS Sonarqube package"
   # x-release-please-start-version
-  version: "8.0.3-3"
+  version: "8.0.3-uds.3"
   # x-release-please-end
   architecture: amd64
 
