@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.3-uds.4](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.3...v8.0.3-uds.4) (2024-01-22)
+
+
+### Miscellaneous
+
+* update versioning to format \<semver\>-uds.\<iteration\> ([#16](https://github.com/defenseunicorns/uds-package-sonarqube/pull/16)) ([f570ef8](https://github.com/defenseunicorns/uds-package-sonarqube/commit/f570ef8f5334b747d6c77f2264d1e668fb6cac59))
+
 ## [8.0.3-3](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-2...v8.0.3-3) (2024-01-17)
 
 
