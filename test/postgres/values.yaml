@@ -1,7 +1,0 @@
-auth:
-  username: sonarqube
-  database: sonarqubedb
-
-commonLabels:
-  uds/user: "1001"
-  uds/group: "0"
