@@ -8,9 +8,13 @@ metadata:
 
 packages:
   - name: sonarqube-postgres
-    path: ../
-    ref: 12.6.6-0
+    repository: ghcr.io/defenseunicorns/packages/uds/dev-postgres
+    ref: 0.0.1
   
+  - name: dev-secrets
+    path: ../
+    ref: 0.1.0
+
   - name: sonarqube
     path: ../
     # x-release-please-start-version
