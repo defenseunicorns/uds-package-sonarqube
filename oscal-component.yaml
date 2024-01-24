@@ -1,0 +1,108 @@
+component-definition:
+  uuid: 96359aa2-ff41-4dd8-b49e-49d0fda34c80
+  metadata:
+    title: UDS Package SonarQube
+    last-modified: "2023-11-29T17:48:16Z"
+    version: "20231129"
+    oscal-version: 1.1.1
+    parties:
+      - uuid: f3cf70f8-ba44-4e55-9ea3-389ef24847d3
+        type: organization
+        name: Defense Unicorns
+        links:
+          - href: https://defenseunicorns.com
+            rel: website
+  components:
+    - uuid: 4b0f8305-6a62-4597-b935-d3d2140a3330
+      type: software
+      title: SonarQube
+      description: |
+        SonarQube is a security tool designed for continuous inspection of code quality. It performs automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities for several programming languages.
+      purpose: Provides users with secure code analysis through DevSecOps pipelines, Git operations, and CI/CD capabilities.
+      responsible-roles:
+        - role-id: provider
+          party-uuids:
+            - f3cf70f8-ba44-4e55-9ea3-389ef24847d3
+      control-implementations:
+        - uuid: d2afb4c4-2cd8-5305-a6cc-d1bc7b388d0c
+          source: https://raw.githubusercontent.com/GSA/fedramp-automation/93ca0e20ff5e54fc04140613476fba80f08e3c7d/dist/content/rev5/baselines/json/FedRAMP_rev5_HIGH-baseline-resolved-profile_catalog.json
+          description: Controls implemented by SonarQube for inheritance by applications that adheres to FedRAMP High Baseline and DoD IL 6.
+          implemented-requirements:
+            - uuid: 55993d5e-a53f-4a85-8e5e-949f0da24b43
+              control-id: au-2
+              description: >-
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+            - uuid: 25b50886-be11-46ae-bece-8c832fb85426
+              control-id: au-3
+              description: >-
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+            - uuid: 1e89f273-7e85-4e76-8c10-190c3fdfddfc
+              control-id: au-3.1
+              description: >-
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+            - uuid: 2afccc07-f998-46f0-a05f-55985c9e58a0
+              control-id: au-8
+              description: >-
+                SonarQube event logs contain NIST compliant timestamps.
+            - uuid: 92f94bdb-e8da-45a6-9f0e-6cd4dc49eaa6
+              control-id: ca-2.2
+              description: >-
+                SonarQube runs automated code scanning to discover vulnerabilities as apart of the secure DevSecOps pipeline as code it committed. 
+            - uuid: c092d3d3-66ca-4922-ac76-d38440640648
+              control-id: ca-7
+              description: >-
+                SonarQube assists with the ConMon process be conducting automated security code scanning in the secure DevSecOps pipelines to discover code vulnerabilities as code is committed.  
+            - uuid: e4037835-5d80-4f09-9303-42045e5a588f
+              control-id: cm-3.6
+              description: >-
+                SonarQube utilizes the underlying istio for FIPs encryption in transit. SonarQube stores data in an encrypted PostgreSQL database.
+            - uuid: 77cf50ed-8c24-4343-87cf-081311496470
+              control-id: cm-6
+              description: >-
+                SonarQube helps to track, monitor, and find any deviations of configuration settings through secure code scanning in DevSecOps pipelines.
+            - uuid: fe87410c-4d1d-42b9-af7a-966aea80972b
+              control-id: ra-5
+              description: >-
+                SonarQube assists with monitoring and scanning for vulnerabilities through secure code scanning in the DevSecOps pipelines as code is committed.
+            - uuid: 6e75a7cf-2e02-4f6f-9854-0b099ee91ba9
+              control-id: ra-5.2
+              description: >-
+                SonarQube updates the vulnerability database through upgrading the version and or plugin updates.
+            - uuid: 3f7ac75e-dba9-43b0-b4c6-706c1edbb74e
+              control-id: ra-5.3
+              description: >-
+                SonarQube conducts secure code scanning against all code committed in the DevSecOps pipelines to identify vulnerabilities.
+            - uuid: fcb8b679-e132-4160-8e45-886b79e82bd7
+              control-id: ra-5.5
+              description: >-
+                SonarQube has access to scan all of the code committed in the secure DevSecOps pipeline.
+            - uuid: 5dae7f2c-b196-4051-a187-ae71ec26c6b5
+              control-id: sa-11
+              description: >-
+                SonarQube helps to provide a secure CI/CD process that includes secure code scanning within the pipelines.
+            - uuid: ce66eaa4-af43-47b7-8835-2a52d0da046a
+              control-id: sa-11.1
+              description: >-
+                SonarQube conducts SAST scanning within the secure DevSecOps pipelines.
+            - uuid: 7016355d-8d8e-4938-9407-3947fcd75b77
+              control-id: sa-11.2
+              description: >-
+                SonarQube conducts SAST scanning within the secure DevSecOps pipelines each time code is committed.
+            - uuid: 2633134e-b344-4866-98d2-857b5c348a79
+              control-id: si-2.3
+              description: >-
+                SonarQube assists in identifying flaws through secure code scanning within the secure DevSecOps pipelines as code is committed.
+            - uuid: 4839f599-54f1-4fed-acaf-a8cd5673ebb1
+              control-id: si-6
+              description: >-
+                SonarQube helps to verify the correct operation of code bases through secure code scanning within the DevSecOps pipelines.
+            - uuid: 4c3d26d2-b9b7-4123-a836-ef126be56bd6
+              control-id: si-11
+              description: >-
+                SonarQube will identify error handling configurations as a part of the secure code scanning conducted within the DevSecOps pipelines.
+  back-matter:
+    resources:
+      - uuid: 2501ae6d-73e5-40e2-a87c-40e88c0c8b62
+        title: UDS Package SonarQube
+        rlinks:
+          - href: https://github.com/defenseunicorns/uds-package-sonarqube
