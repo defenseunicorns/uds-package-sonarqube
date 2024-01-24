@@ -9,9 +9,6 @@ inputs:
   install-k3d:
     description: "whether to install k3d or not"
     default: "true"
-  install-node:
-    description: "whether to install node or not"
-    default: "true"
 
 runs:
   using: "composite"
@@ -22,12 +19,6 @@ runs:
         # renovate: datasource=github-tags depName=defenseunicorns/zarf versioning=semver
         version: v0.32.1
         download-init-package: ${{ inputs.download-init-package }}
-
-    - name: Use Node.js latest
-      if: ${{ inputs.install-node == 'true' }}
-      uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
-      with:
-        node-version: 20
 
     - name: Install k3d
       if: ${{ inputs.install-k3d == 'true' }}
