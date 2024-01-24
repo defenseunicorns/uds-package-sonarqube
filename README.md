@@ -1,13 +1,22 @@
 # uds-package-sonarqube
 UDS Sonarqube Zarf Package
 
+This package is purposed for use as part of the software factory bundle deployed on UDS-CORE (https://github.com/defenseunicorns/uds-core).
+
+## Pre-requisites
+
+Sonarqube needs connection to a postgres instance either in cluster or external. It finds this connection via the `sonarqube_db_endpoint` variable declared in the zarf package and configured (as an example) at deploy time by the [uds bundle config](./bundle/uds-config.yaml).
+
 ## Flavors
-| Flavor | example creation |
+
+| Flavor | Example Creation |
 | ------ | ---------------- |
 | upstream-ce | `zarf package create . -f upstream-ce` |
 | registry1 | `zarf package create . -f registry1` |
 
-## Tasks
+## UDS Tasks (for local dev and CI)
+*For local dev, this requires you install [uds-cli](https://github.com/defenseunicorns/uds-cli?tab=readme-ov-file#install)
+
 | Task | Description | Example |
 | ---- | ----------- | ------- |
 | setup-cluster | Uses the `k3d-core-istio` bundle to create a cluster for testing against | `uds run setup-cluster` |
