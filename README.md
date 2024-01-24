@@ -7,7 +7,7 @@ This package is purposed for use as part of the software factory bundle deployed
 
 Sonarqube needs connection to a postgres instance either in cluster or external. It finds this connection via the `sonarqube_db_endpoint` variable declared in the zarf package and configured (as an example) at deploy time by the [uds bundle config](./bundle/uds-config.yaml).
 
-For local testing and CI, Sonarqube is bundled with the [dev-postgres package](ghcr.io/defenseunicorns/packages/uds/dev-postgres)
+For local testing and CI, Sonarqube is bundled with the [dev-postgres package](ghcr.io/defenseunicorns/packages/uds/dev-postgres).
 
 ## Flavors
 
