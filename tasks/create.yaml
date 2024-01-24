@@ -1,3 +1,6 @@
+includes:
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common-tasks/init/tasks/create.yaml
+
 variables:
   - name: FLAVOR
     default: "registry1"
@@ -6,14 +9,9 @@ tasks:
   - name: sonarqube-test-bundle
     description: Create the UDS bundle with Sonarqube and its dependencies
     actions:
-      - task: sonarqube-package
+      - task: create:package
       - task: dependency-package
       - cmd: uds create bundle --confirm --no-progress --architecture=${UDS_ARCH}
-
-  - name: sonarqube-package
-    description: Create the UDS Sonarqube Zarf Package
-    actions:
-      - cmd: zarf package create --confirm --no-progress --architecture=${ZARF_ARCHITECTURE} --flavor ${FLAVOR}
 
   - name: dependency-package
     description: Create the Dependency Zarf Package(s)

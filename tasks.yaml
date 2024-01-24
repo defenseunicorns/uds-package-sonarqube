@@ -1,8 +1,8 @@
 includes:
   - cleanup: ./tasks/cleanup.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common-tasks/init/tasks/setup.yaml
   - create: ./tasks/create.yaml
-  - deploy: ./tasks/deploy.yaml
-  - setup: ./tasks/setup.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common-tasks/init/tasks/deploy.yaml
   - test: ./tasks/test.yaml
 
 tasks:
@@ -20,11 +20,11 @@ tasks:
   
   - name: deploy-package
     actions:
-      - task: deploy:sonarqube-package
+      - task: deploy:package
 
   - name: deploy-test-bundle
     actions:
-      - task: deploy:sonarqube-test-bundle
+      - task: deploy:test-bundle
 
   - name: test-package
     actions:
