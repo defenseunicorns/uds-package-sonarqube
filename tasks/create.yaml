@@ -11,7 +11,7 @@ tasks:
     actions:
       - task: create:package
       - task: dependency-package
-      - cmd: create:test-bundle
+      - task: create:test-bundle
 
   - name: dependency-package
     description: Create the Dependency Zarf Package(s)
