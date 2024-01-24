@@ -80,7 +80,6 @@ components:
       valuesFiles:
         - values/sonarqube-values.yaml
         - values/upstream.yaml
-        - values/ce.yaml
     - name: uds-sonarqube-config
       namespace: sonarqube
       version: 0.1.0
