@@ -1,19 +1,28 @@
-name: Test package
+name: Setup
 
+# This workflow is triggered on pull requests to the main branch.
 on:
-  # Manual trigger
-  workflow_dispatch:
+  pull_request:
+    paths:
+      - ".github/**"
+      - "bundle/**"
+      - "values/**"
+      - "tasks/**"
+      - "src/**"
+      - "chart/**"
+      - "tasks.yaml"
+      - "zarf.yaml"
 
-  # Triggered by pull-request-conditionals.yaml
-  workflow_call:
-
-# Abort prior jobs in the same workflow / PR
-concurrency:
-  group: test-${{ github.ref }}-${{ inputs.package }}
-  cancel-in-progress: true
-
+# Permissions for the GITHUB_TOKEN used by the workflow.
 permissions:
-  contents: read
+  id-token: write # Needed for OIDC-related operations.
+  contents: read # Allows reading the content of the repository.
+  pull-requests: read # Allows reading pull request metadata.
+
+# Default settings for all run commands in the workflow jobs.
+defaults:
+  run:
+    shell: bash -e -o pipefail {0} # Ensures that scripts fail on error and pipefail is set.
 
 jobs:
   test:
@@ -32,6 +41,7 @@ jobs:
         uses: ./.github/actions/setup
       
       - name: Iron Bank Login
+        if: ${{ matrix.flavor == 'registry1' }}
         run: zarf tools registry login -u "${{secrets.IRON_BANK_ROBOT_USERNAME}}" -p "${{secrets.IRON_BANK_ROBOT_PASSWORD}}" registry1.dso.mil
 
       - name: Create test bundle
