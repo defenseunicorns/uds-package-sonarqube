@@ -31,7 +31,7 @@ jobs:
     strategy:
       matrix:
         flavor: [upstream-ce, registry1]
-    name: Deploy (${{ matrix.flavor }})
+    name: Deploy ${{ matrix.flavor }}
 
     steps:
       - name: Checkout repository
