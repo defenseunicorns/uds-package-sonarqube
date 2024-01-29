@@ -67,7 +67,7 @@ components:
     required: true
     description: "Deploy sonarqube"
     only:
-      flavor: upstream-ce
+      flavor: upstream
     charts:
     - name: sonarqube
       #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
