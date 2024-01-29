@@ -1,4 +1,4 @@
-name: Setup
+name: Test
 
 # This workflow is triggered on pull requests to the main branch.
 on:
@@ -25,13 +25,13 @@ defaults:
     shell: bash -e -o pipefail {0} # Ensures that scripts fail on error and pipefail is set.
 
 jobs:
-  test:
+  deploy:
     runs-on: "ubuntu-latest"
     timeout-minutes: 20
-    name: Test
     strategy:
       matrix:
         flavor: [upstream-ce, registry1]
+    name: ${{ matrix.flavor }}
 
     steps:
       - name: Checkout repository
