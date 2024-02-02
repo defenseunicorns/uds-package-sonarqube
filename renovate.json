@@ -16,7 +16,7 @@
   "dependencyDashboard": true,
   "platform": "github",
   "onboarding": false,
-  "requireConfig": false,
+  "requireConfig": "optional",
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "rebaseWhen": "conflicted",
   "commitBodyTable": true,
@@ -76,19 +76,23 @@
     {
       "fileMatch": [".*\/?zarf\\.ya?ml$"],
       "matchStrings": [
-        "-\\s+['\"](?<depName>[^:]+):(?<currentValue>.*)['\"]"
+        "-\\s+['\"]?(?<depName>[^:]+):(?<currentValue>.*)['\"]?"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
       "datasourceTemplate": "docker",
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}"
     },
     {
-      "fileMatch": ["^Makefile$"],
-      "matchStrings": [
-        "renovate: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( versioning=(?<versioning>.*?))?( extractVersion=(?<extractVersion>.*?))?( registryUrl=(?<registryUrl>.*?))?\\s.*?=\\s*['\"]?(?<currentValue>.*?)['\"]?\\s"
+      "fileMatch": [
+        "(^|/)zarf.yaml$"
       ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
-      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{else}}^(?<version>.*)${{/if}}"
+      "matchStringsStrategy": "recursive",
+      "matchStrings": [
+        "charts:(.|\n)*?(^\\s{4}[\\w:]+|\n$|^\\s{2}-)",
+        "- name: (?<depName>.+)(.|\n)*?url: (?<registryUrl>.+)(.|\n)*?version: (?<currentValue>.+)",
+        "- name: (?<depName>.+)(.|\n)*?version: (?<currentValue>.+)(.|\n)*?url: (?<registryUrl>.+)"
+      ],
+      "datasourceTemplate": "helm"
     }
   ],
   "packageRules": [
