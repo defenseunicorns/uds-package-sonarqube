@@ -59,7 +59,7 @@ components:
       valuesFiles:
         - values/sonarqube-values.yaml
     images:
-      - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
+      - "registry1.dso.mil/ironbank/big-bang/base:8.4
       - "registry1.dso.mil/ironbank/big-bang/sonarqube-9:9.9.3-community"
 
   # Note: upstream-ce flavor is experimental
@@ -76,7 +76,7 @@ components:
     - name: sonarqube
       #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
       #helm search repo sonarqube/sonarqube -l
-      version: 8.0.3+2010
+      version: 10.3.0+2009
       namespace: sonarqube
       url: https://SonarSource.github.io/helm-chart-sonarqube
       repoName: sonarqube
@@ -86,5 +86,5 @@ components:
         - values/upstream.yaml
     images:
       - "sonarqube:9.9.3-community"
-      - "curlimages/curl:7.76.1"
-      - "busybox:1.32"
+      - "curlimages/curl:8.6.0
+      - "busybox:1.36.1
