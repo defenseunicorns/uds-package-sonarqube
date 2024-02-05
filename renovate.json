@@ -78,7 +78,7 @@
     {
       "fileMatch": [".*\/?zarf\\.ya?ml$"],
       "matchStrings": [
-        "-\\s+['\"]?(?<depName>[^:]+):(?<currentValue>.*)['\"]?"
+        "- [\\'\"]?(?<depName>[^\"\\'\\s]+):(?<currentValue>[^\"\\'\\s]+)[\\'\"]?"
       ],
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver-coerced{{/if}}",
       "datasourceTemplate": "docker",
@@ -107,6 +107,12 @@
         "(?m)name: (?<depName>.+)(.|\\n)*?version: (?<currentValue>.+)(.|\\n)*?url: (?<registryUrl>.+)"
       ],
       "datasourceTemplate": "helm"
+    }
+  ],
+    "packageRules": [
+    {
+      "matchPackageNames": ["registry1.dso.mil/ironbank/big-bang/base"],
+      "allowedVersions": "!/8.4/"
     }
   ]
 }
