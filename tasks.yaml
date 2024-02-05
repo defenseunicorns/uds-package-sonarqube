@@ -9,7 +9,7 @@ tasks:
   - name: setup-cluster
     actions:
       - task: setup:k3d-test-cluster
-  
+
   - name: create-package
     actions:
       - task: create:sonarqube-package
@@ -17,7 +17,7 @@ tasks:
   - name: create-test-bundle
     actions:
       - task: create:sonarqube-test-bundle
-  
+
   - name: deploy-package
     actions:
       - task: deploy:sonarqube-package

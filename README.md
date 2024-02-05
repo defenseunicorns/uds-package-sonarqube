@@ -39,7 +39,7 @@ The released packages can be found in [ghcr](https://github.com/defenseunicorns/
 
 ## Values
 
-See: 
+See:
 1. [/values/sonarqube-values.yaml](/values/sonarqube-values.yaml)
 2. [/values/upstream.yaml](/values/upstream.yaml)
 
