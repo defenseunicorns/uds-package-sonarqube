@@ -37,12 +37,6 @@ The released packages can be found in [ghcr](https://github.com/defenseunicorns/
 | test-package | Run checks against a deployed package or bundle | `uds run test-package` |
 | cleanup | Teardown the cluster | `uds run cleanup` |
 
-## Values
-
-See: 
-1. [/values/sonarqube-values.yaml](/values/sonarqube-values.yaml)
-2. [/values/upstream.yaml](/values/upstream.yaml)
-
 ## Contributing
 
 Please see the [CONTRIBUTING.md](./CONTRIBUTING.md)
