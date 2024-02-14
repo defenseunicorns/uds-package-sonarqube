@@ -1,4 +1,4 @@
-# UDS SonarQube Zarf Package
+# 🏭 UDS SonarQube Zarf Package
 
 [![Latest Release](https://img.shields.io/github/v/release/defenseunicorns/uds-package-sonarqube)](https://github.com/defenseunicorns/uds-package-sonarqube/releases)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/defenseunicorns/uds-package-sonarqube/tag-and-release.yaml)](https://github.com/defenseunicorns/uds-package-sonarqube/actions/workflows/tag-and-release.yaml)
