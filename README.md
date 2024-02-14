@@ -6,7 +6,7 @@
 
 This package is designed for use as part of a [UDS Software Factory](https://github.com/defenseunicorns/uds-software-factory) bundle deployed on [UDS Core](https://github.com/defenseunicorns/uds-core).
 
-## Pre-requisites
+## Prerequisites
 
 SonarQube needs connection to a PostgreSQL instance either in cluster or external. It finds this connection via the `sonarqube_db_endpoint` variable declared in the zarf package and configured (as an example) at deploy time by the [uds bundle config](./bundle/uds-config.yaml).
 
@@ -36,12 +36,6 @@ The released packages can be found in [ghcr](https://github.com/defenseunicorns/
 | deploy-test-bundle | Deploy SonarQube and SonarQube dependency bundle | `uds run deploy-test-bundle` |
 | test-package | Run checks against a deployed package or bundle | `uds run test-package` |
 | cleanup | Teardown the cluster | `uds run cleanup` |
-
-## Values
-
-See: 
-1. [/values/sonarqube-values.yaml](/values/sonarqube-values.yaml)
-2. [/values/upstream.yaml](/values/upstream.yaml)
 
 ## Contributing
 
