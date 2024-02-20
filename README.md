@@ -16,8 +16,10 @@ For local testing and CI, SonarQube is bundled with the [dev-postgres package](g
 
 | Flavor | Description | Example Creation |
 | ------ | ----------- | ---------------- |
-| upstream-ce | Uses upstream images within the package. | `zarf package create . -f upstream-ce` |
-| registry1 | Uses images from registry1.dso.mil within the package. | `zarf package create . -f registry1` |
+| `upstream-ce` | Uses upstream images within the package | `zarf package create . -f upstream-ce` |
+| `registry1` | Uses images from registry1.dso.mil within the package | `zarf package create . -f registry1` |
+
+> **_NOTE:_**  `registry1` flavor only supports the amd64 architecture
 
 ## Releases
 
