@@ -6,7 +6,6 @@ metadata:
   # x-release-please-start-version
   version: "8.0.3-uds.4"
   # x-release-please-end
-  architecture: amd64
 
 variables:
   - name: SONARQUBE_DEPENDS_ON
@@ -46,6 +45,8 @@ components:
     description: "Deploy sonarqube"
     only:
       flavor: registry1
+      cluster:
+        architecture: amd64
     charts:
     - name: uds-sonarqube-config
       namespace: sonarqube
