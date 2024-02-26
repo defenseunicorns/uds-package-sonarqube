@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 20
     strategy:
       matrix:
-        flavor: [upstream-ce, registry1]
+        flavor: [upstream, registry1]
     name: Deploy ${{ matrix.flavor }}
 
     steps:

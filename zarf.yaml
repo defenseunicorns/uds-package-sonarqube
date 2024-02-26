@@ -63,12 +63,12 @@ components:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
       - "registry1.dso.mil/ironbank/big-bang/sonarqube-9:9.9.3-community"
 
-  # Note: upstream-ce flavor is experimental
+  # Note: upstream flavor is experimental
   - name: sonarqube
     required: true
     description: "Deploy sonarqube"
     only:
-      flavor: upstream-ce
+      flavor: upstream
     charts:
     - name: uds-sonarqube-config
       namespace: sonarqube
