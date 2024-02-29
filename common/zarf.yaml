@@ -13,7 +13,3 @@ components:
       namespace: sonarqube
       version: 0.1.0
       localPath: ../chart
-    - name: sonarqube
-      namespace: sonarqube
-      valuesFiles:
-        - ../values/common-values.yaml
