@@ -3,4 +3,17 @@ kind: ZarfPackageConfig
 metadata:
   name: sonarqube-common
   description: "UDS SonarQube Common Package" 
-  
+
+components:
+  - name: sonarqube
+    required: true
+    description: "Deploy sonarqube"
+    charts:
+    - name: uds-sonarqube-config
+      namespace: sonarqube
+      version: 0.1.0
+      localPath: ../chart
+    - name: sonarqube
+      namespace: sonarqube
+      valuesFiles:
+        - ../values/common-values.yaml
