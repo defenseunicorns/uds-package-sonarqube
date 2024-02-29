@@ -48,14 +48,6 @@ components:
       flavor: registry1
       cluster:
         architecture: amd64
-    charts:
-    - name: sonarqube
-      namespace: sonarqube
-      url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
-      gitPath: chart
-      version: "8.0.3-bb.0"
-      valuesFiles:
-        - values/common-values.yaml
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
       - "registry1.dso.mil/ironbank/big-bang/sonarqube-9:9.9.3-community"
@@ -69,15 +61,7 @@ components:
       flavor: upstream
     charts:
     - name: sonarqube
-      namespace: sonarqube
-      #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
-      #helm search repo sonarqube/sonarqube -l
-      url: https://SonarSource.github.io/helm-chart-sonarqube
-      repoName: sonarqube
-      releaseName: sonarqube
-      version: 8.0.3+2010
       valuesFiles:
-        - values/common-values.yaml
         - values/upstream.yaml
     images:
       - "sonarqube:9.9.3-community"
