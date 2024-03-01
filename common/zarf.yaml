@@ -22,6 +22,3 @@ components:
       url: https://SonarSource.github.io/helm-chart-sonarqube
       repoName: sonarqube
       releaseName: sonarqube
-      valuesFiles:
-        - ../values/sonarqube-values.yaml
-        - ../values/upstream.yaml
