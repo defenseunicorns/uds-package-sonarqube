@@ -23,5 +23,5 @@ components:
       repoName: sonarqube
       releaseName: sonarqube
       valuesFiles:
-        - values/sonarqube-values.yaml
-        - values/upstream.yaml
+        - ../values/sonarqube-values.yaml
+        - ../values/upstream.yaml
