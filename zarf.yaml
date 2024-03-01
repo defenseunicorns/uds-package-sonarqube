@@ -67,13 +67,11 @@ components:
   - name: sonarqube
     required: true
     description: "Deploy sonarqube"
+    import:
+      path: common
     only:
       flavor: upstream
     charts:
-    - name: uds-sonarqube-config
-      namespace: sonarqube
-      version: 0.1.0
-      localPath: chart
     - name: sonarqube
       #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
       #helm search repo sonarqube/sonarqube -l

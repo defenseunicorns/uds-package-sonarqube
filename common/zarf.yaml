@@ -13,12 +13,3 @@ components:
       namespace: sonarqube
       version: 0.1.0
       localPath: ../chart
-    charts:
-    - name: sonarqube
-      namespace: sonarqube
-      url: https://SonarSource.github.io/helm-chart-sonarqube
-      repoName: sonarqube
-      releaseName: sonarqube
-      version: 8.0.3+2010
-      valuesFiles:
-        - ../values/common-values.yaml
