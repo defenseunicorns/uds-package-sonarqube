@@ -74,7 +74,6 @@ components:
     charts:
     - name: sonarqube
       valuesFiles:
-        - values/sonarqube-values.yaml
         - values/upstream.yaml
     images:
       - "sonarqube:9.9.3-community"

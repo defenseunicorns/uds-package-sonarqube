@@ -13,7 +13,6 @@ components:
       namespace: sonarqube
       version: 0.1.0
       localPath: ../chart
-    charts:
     - name: sonarqube
       #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
       #helm search repo sonarqube/sonarqube -l
@@ -22,3 +21,5 @@ components:
       url: https://SonarSource.github.io/helm-chart-sonarqube
       repoName: sonarqube
       releaseName: sonarqube
+      valuesFiles:
+        - ../values/sonarqube-values.yaml
