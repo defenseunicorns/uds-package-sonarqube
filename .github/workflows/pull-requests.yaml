@@ -56,10 +56,6 @@ jobs:
       - name: Test package
         run: uds run test-package
 
-      - name: Cleanup
-        if: always()
-        run: uds run cleanup
-
       - name: Save logs
         if: always()
         uses: defenseunicorns/uds-common/.github/actions/save-logs@417b9c2bc088f664c616c9929a2b3ce448d251f7
