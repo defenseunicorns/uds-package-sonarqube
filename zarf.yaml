@@ -50,17 +50,8 @@ components:
       cluster:
         architecture: amd64
     charts:
-    # - name: uds-sonarqube-config
-    #   namespace: sonarqube
-    #   version: 0.1.0
-    #   localPath: chart
     - name: sonarqube
-      # namespace: sonarqube
-      # url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
-      # gitPath: chart
-      # version: "8.0.3-bb.0"
       valuesFiles:
-        # - values/common-values.yaml
         - values/registry1.yaml
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
