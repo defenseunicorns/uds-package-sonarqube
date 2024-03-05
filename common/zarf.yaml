@@ -22,4 +22,4 @@ components:
       repoName: sonarqube
       releaseName: sonarqube
       valuesFiles:
-        - ../values/sonarqube-values.yaml
+        - ../values/common-values.yaml

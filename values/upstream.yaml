@@ -1,9 +1,3 @@
 image:
   repository: sonarqube
   tag: 9.9.3-{{ .Values.edition }}
-
-initSysctl:
-  enabled: false
-
-elasticsearch:
-  configureNode: false
