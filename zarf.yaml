@@ -60,7 +60,7 @@ components:
       gitPath: chart
       version: "8.0.3-bb.0"
       valuesFiles:
-        - values/sonarqube-values.yaml
+        - values/common-values.yaml
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
       - "registry1.dso.mil/ironbank/big-bang/sonarqube-9:9.9.3-community"
