@@ -2,21 +2,6 @@ image:
   repository: registry1.dso.mil/ironbank/big-bang/sonarqube-9
   tag: 9.9.3-community
 
-# # Set security context for sonarqube pod
-# securityContext:
-#   fsGroup: 1000
-#   runAsUser: 1000
-#   runAsGroup: 1000
-
-# # Set security context for sonarqube container
-# containerSecurityContext:
-#   # Sonarqube dockerfile creates sonarqube user as UID and GID 1000
-#   runAsUser: 1000
-#   runAsGroup: 1000
-#   capabilities:
-#     drop: 
-#       - ALL
-
 initContainers:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
 

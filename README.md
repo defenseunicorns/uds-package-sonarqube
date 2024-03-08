@@ -42,3 +42,6 @@ The released packages can be found in [ghcr](https://github.com/defenseunicorns/
 ## Contributing
 
 Please see the [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+## Notes:
+This package is currently using registry1 chart for both flavors. This is because the upstream chart depends on 'hostname' and 'wget' to be available in the images, and the registry1 images do not include these tools.
