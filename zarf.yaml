@@ -47,8 +47,6 @@ components:
       path: common
     only:
       flavor: registry1
-      cluster:
-        architecture: amd64
     charts:
     - name: sonarqube
       valuesFiles:

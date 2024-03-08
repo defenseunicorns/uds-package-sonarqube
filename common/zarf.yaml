@@ -13,13 +13,18 @@ components:
       namespace: sonarqube
       version: 0.1.0
       localPath: ../chart
+    # - name: sonarqube
+    #   #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
+    #   #helm search repo sonarqube/sonarqube -l
+    #   version: 8.0.3+2010
+    #   namespace: sonarqube
+    #   url: https://SonarSource.github.io/helm-chart-sonarqube
+    #   repoName: sonarqube
+    #   releaseName: sonarqube
     - name: sonarqube
-      #helm repo add sonarqube https://SonarSource.github.io/helm-chart-sonarqube
-      #helm search repo sonarqube/sonarqube -l
-      version: 8.0.3+2010
       namespace: sonarqube
-      url: https://SonarSource.github.io/helm-chart-sonarqube
-      repoName: sonarqube
-      releaseName: sonarqube
+      url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
+      gitPath: chart
+      version: "8.0.3-bb.0"
       valuesFiles:
         - ../values/common-values.yaml
