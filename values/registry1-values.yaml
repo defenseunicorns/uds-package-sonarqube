@@ -1,0 +1,9 @@
+image:
+  repository: registry1.dso.mil/ironbank/big-bang/sonarqube-9
+  tag: 9.9.3-community
+
+initContainers:
+  image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
+
+prometheusExporter:
+  image: registry1.dso.mil/ironbank/big-bang/base:2.1.0

@@ -19,42 +19,11 @@ sonarProperties:
 monitoring:
   enabled: true
 
-#networkPolicies:
-#  enabled: true
-#  ingressLabels:
-#    app: null
-#    istio: null
-#
-#networkPolicy:
-#  enabled: true
-#  additionalNetworkPolicys:
-#    ingress:
-#    - from:
-#      - namespaceSelector:
-#          matchLabels:
-#            kubernetes.io/metadata.name: gitlab-runner-sandbox
-#        podSelector: {}
-#      ports:
-#      - port: 9000
-#        protocol: TCP
-#    egress:
-#    - to:
-#      - namespaceSelector:
-#          matchLabels:
-#            kubernetes.io/metadata.name: gitlab
-#        podSelector:
-#          matchLabels:
-#            app: webservice
-#    - to:
-#      - namespaceSelector:
-#          matchLabels:
-#            kubernetes.io/metadata.name: gitlab-runner-sandbox
-#        podSelector: {}
-#    podSelector:
-#      matchLabels: {}
-#    policyTypes:
-#    - Egress
-#    - Ingress
+initSysctl:
+  enabled: false
+
+elasticsearch:
+  configureNode: false
 
 jdbcOverwrite:
   enable: true
