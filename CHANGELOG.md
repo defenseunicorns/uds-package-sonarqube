@@ -1,5 +1,31 @@
 # Changelog
 
+## [8.0.3-uds.5](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.4...v8.0.3-uds.5) (2024-03-08)
+
+
+### Features
+
+* set architecture only on registry1 flavor ([#31](https://github.com/defenseunicorns/uds-package-sonarqube/issues/31)) ([b0862ec](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b0862ec60979287c185c3c3a396c76716fe3ec07))
+
+
+### Bug Fixes
+
+* renovate ([#35](https://github.com/defenseunicorns/uds-package-sonarqube/issues/35)) ([114555e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/114555e6425b5c481e1419150c3f1126789d6fdf))
+
+
+### Miscellaneous
+
+* add more consistency between package repos ([#37](https://github.com/defenseunicorns/uds-package-sonarqube/issues/37)) ([5a025a4](https://github.com/defenseunicorns/uds-package-sonarqube/commit/5a025a4e0fe6ca4394e0e105cfc8a3d0a4aa9668))
+* add oscal component. ([#25](https://github.com/defenseunicorns/uds-package-sonarqube/issues/25)) ([19b02f7](https://github.com/defenseunicorns/uds-package-sonarqube/commit/19b02f78458f11cd04ebb18d33f1fe003c61c678))
+* refactor to common zarf config and values files ([#44](https://github.com/defenseunicorns/uds-package-sonarqube/issues/44)) ([38f4d72](https://github.com/defenseunicorns/uds-package-sonarqube/commit/38f4d72d5857027bf064453fe08078be12c0b119))
+* release 8.0.3-uds.5 ([#50](https://github.com/defenseunicorns/uds-package-sonarqube/issues/50)) ([2e42705](https://github.com/defenseunicorns/uds-package-sonarqube/commit/2e42705171e53b8a433364d5510240c987e57be0))
+* remove install node from setup action; update cluster setup to k3d-core-istio-dev:0.9.2 ([ac5d8bb](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ac5d8bbb3f2dc0f5b7f5c2ce1470a7ac03369b18))
+* update CONTRIBUTING.md "Capability" -&gt; "Package" ([6c8ae6c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/6c8ae6c7851d4a5ce6808a70e3c77d588f3dee07))
+* Update README.md ([#38](https://github.com/defenseunicorns/uds-package-sonarqube/issues/38)) ([b512e0d](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b512e0d7605b6f1ef2ef8fa2fd18159aee4061ca))
+* update renovate.json ([1fbe545](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1fbe545e0d642bbaffe1f002f207b10cd863727d))
+* update repo to create a new standard ([17c07ef](https://github.com/defenseunicorns/uds-package-sonarqube/commit/17c07ef184b46b6f747765870cd30e0c6f4c8a63))
+* updating readme ([#20](https://github.com/defenseunicorns/uds-package-sonarqube/issues/20)) ([c2ff51b](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c2ff51b77d7508a464ae4ca71f69de4dd2658ea5))
+
 ## [8.0.3-uds.4](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.3...v8.0.3-uds.4) (2024-01-22)
 
 
