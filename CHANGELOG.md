@@ -1,5 +1,12 @@
 # Changelog
 
+## [8.0.3-uds.6](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.5...v8.0.3-uds.6) (2024-03-08)
+
+
+### Miscellaneous
+
+* release 8.0.3-uds.6 ([#52](https://github.com/defenseunicorns/uds-package-sonarqube/issues/52)) ([db6032f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/db6032fe3fc7d37cc074ffc24fbfffc8e27b8e97))
+
 ## [8.0.3-uds.5](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.4...v8.0.3-uds.5) (2024-03-08)
 
 
