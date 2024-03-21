@@ -40,7 +40,7 @@ tasks:
         setVariables:
           - name: CURRENT_VERSION
       - description: Move the latest to the current (needed to make this work on release-please PRs)
-        cmd: test -f zarf-package-mattermost-${UDS_ARCH}-${CURRENT_VERSION}.tar.zst || mv zarf-package-mattermost-${UDS_ARCH}-*.tar.zst zarf-package-mattermost-${UDS_ARCH}-${CURRENT_VERSION}.tar.zst
+        cmd: test -f zarf-package-sonarqube-${UDS_ARCH}-${CURRENT_VERSION}.tar.zst || mv zarf-package-sonarqube-${UDS_ARCH}-*.tar.zst zarf-package-sonarqube-${UDS_ARCH}-${CURRENT_VERSION}.tar.zst
       - task: dependencies:create
       - task: create:test-bundle
 
