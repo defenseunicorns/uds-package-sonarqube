@@ -2,22 +2,22 @@
 kind: ZarfPackageConfig
 metadata:
   name: sonarqube-common
-  description: "UDS SonarQube Common Package" 
+  description: "UDS SonarQube Common Package"
 
 components:
   - name: sonarqube
     required: true
     description: "Deploy sonarqube"
     charts:
-    - name: uds-sonarqube-config
-      namespace: sonarqube
-      version: 0.1.0
-      localPath: ../chart
-    - name: sonarqube
-      namespace: sonarqube
-      # see note in README.md about use of registry1 chart for both flavors
-      url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
-      gitPath: chart
-      version: "8.0.3-bb.0"
-      valuesFiles:
-        - ../values/common-values.yaml
+      - name: uds-sonarqube-config
+        namespace: sonarqube
+        version: 0.1.0
+        localPath: ../chart
+      - name: sonarqube
+        namespace: sonarqube
+        # see note in README.md about use of registry1 chart for both flavors
+        url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
+        gitPath: chart
+        version: "8.0.3-bb.0"
+        valuesFiles:
+          - ../values/common-values.yaml

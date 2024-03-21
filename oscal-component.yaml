@@ -31,15 +31,15 @@ component-definition:
             - uuid: 55993d5e-a53f-4a85-8e5e-949f0da24b43
               control-id: au-2
               description: >-
-                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.
             - uuid: 25b50886-be11-46ae-bece-8c832fb85426
               control-id: au-3
               description: >-
-                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.
             - uuid: 1e89f273-7e85-4e76-8c10-190c3fdfddfc
               control-id: au-3.1
               description: >-
-                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.  
+                SonarQube creates logs as it conducts secure code scanning within the secure DevSecOps pipeline.
             - uuid: 2afccc07-f998-46f0-a05f-55985c9e58a0
               control-id: au-8
               description: >-
@@ -47,11 +47,11 @@ component-definition:
             - uuid: 92f94bdb-e8da-45a6-9f0e-6cd4dc49eaa6
               control-id: ca-2.2
               description: >-
-                SonarQube runs automated code scanning to discover vulnerabilities as apart of the secure DevSecOps pipeline as code it committed. 
+                SonarQube runs automated code scanning to discover vulnerabilities as apart of the secure DevSecOps pipeline as code it committed.
             - uuid: c092d3d3-66ca-4922-ac76-d38440640648
               control-id: ca-7
               description: >-
-                SonarQube assists with the ConMon process be conducting automated security code scanning in the secure DevSecOps pipelines to discover code vulnerabilities as code is committed.  
+                SonarQube assists with the ConMon process be conducting automated security code scanning in the secure DevSecOps pipelines to discover code vulnerabilities as code is committed.
             - uuid: e4037835-5d80-4f09-9303-42045e5a588f
               control-id: cm-3.6
               description: >-
