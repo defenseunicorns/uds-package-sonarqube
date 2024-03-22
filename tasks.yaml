@@ -2,11 +2,11 @@ includes:
   - cleanup: ./tasks/cleanup.yaml
   - dependencies: ./tasks/dependencies.yaml
   - test: ./tasks/test.yaml
-  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.4/tasks/create.yaml
-  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.4/tasks/lint.yaml
-  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.4/tasks/pull.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.4/tasks/deploy.yaml
-  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.4/tasks/setup.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.5/tasks/create.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.5/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.5/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.5/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.5/tasks/setup.yaml
 
 tasks:
   - name: default
@@ -35,7 +35,7 @@ tasks:
     actions:
       - task: pull:latest-package-release
         with:
-          spoof-release: "true"
+          spoof_release: "true"
       - task: dependencies:create
       - task: create:test-bundle
 
