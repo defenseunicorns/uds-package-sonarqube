@@ -6,7 +6,6 @@ metadata:
 
 components:
   - name: sonarqube
-    required: true
     description: "Deploy sonarqube"
     charts:
       - name: uds-sonarqube-config

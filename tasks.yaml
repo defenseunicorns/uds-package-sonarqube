@@ -10,7 +10,7 @@ includes:
 
 tasks:
   - name: default
-    description: Create K3D Cluster with UDS-Core and SonarQube
+    description: Create K3D Cluster with UDS-Core (Dev) and SonarQube
     actions:
       - task: create-sq-test-bundle
       - task: setup:k3d-test-cluster
