@@ -1,45 +1,62 @@
 includes:
   - cleanup: ./tasks/cleanup.yaml
-  - create: ./tasks/create.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common-tasks/v0.2.2/tasks/deploy.yaml
-  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common-tasks/v0.2.2/tasks/setup.yaml
+  - dependencies: ./tasks/dependencies.yaml
   - test: ./tasks/test.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.6/tasks/create.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.6/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.6/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.6/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.3.6/tasks/setup.yaml
 
 tasks:
   - name: default
-    description: Create K3D Cluster with UDS-Core-Istio and Sonarqube
+    description: Create K3D Cluster with UDS-Core (Dev) and SonarQube
     actions:
-      - task: create-test-bundle
-      - task: setup-cluster
-      - task: deploy-test-bundle
+      - task: create-sq-test-bundle
+      - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
 
-  - name: create-package
+  - name: create-sq-package
+    description: Create the SonarQube package
     actions:
-      - task: create:sonarqube-package
+      - task: create:package
+        with:
+          options: "--skip-sbom"
 
-  - name: deploy-package
+  - name: create-sq-test-bundle
+    description: Create a local UDS SonarQube bundle
     actions:
-      - task: deploy:package
+      - task: create-sq-package
+      - task: dependencies:create
+      - task: create:test-bundle
 
-  - name: cleanup
+  - name: create-sq-latest-release-bundle
+    description: Create UDS SonarQube bundle based on the latest release
     actions:
-      - task: cleanup:destroy
+      - task: pull:latest-package-release
+        with:
+          spoof_release: "true"
+      - task: dependencies:create
+      - task: create:test-bundle
 
 # CI will execute the following (via uds-common/.github/actions/test) so they need to be here with these names
 
-  - name: create-test-bundle
-    actions:
-      - task: create:sonarqube-test-bundle
-
-  - name: setup-cluster
-    actions:
-      - task: setup:k3d-test-cluster
-
-  - name: deploy-test-bundle
-    actions:
-      - task: deploy:test-bundle
-
   - name: test-package
+    description: Test the health of a SonarQube deployment
     actions:
+      - task: create-sq-test-bundle
+      - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
+      - task: test:health-check
+      - task: test:ingress
+
+  - name: test-upgrade
+    description: Test an upgrade from the latest released package to the current branch
+    actions:
+      - task: create-sq-latest-release-bundle
+      - task: setup:k3d-test-cluster
+      - task: deploy:test-bundle
+      - task: create-sq-test-bundle
+      - task: deploy:test-bundle
       - task: test:health-check
       - task: test:ingress

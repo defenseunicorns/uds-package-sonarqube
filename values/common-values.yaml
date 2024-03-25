@@ -42,5 +42,5 @@ postgresql:
   postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
   service:
     port: 5432
- 
+
 domain: ###ZARF_VAR_DOMAIN###

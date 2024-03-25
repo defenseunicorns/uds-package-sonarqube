@@ -4,4 +4,3 @@ variables:
     db_name: "sonarqubedb"
   sonarqube:
     sonarqube_db_endpoint: "postgresql.dev-postgres.svc.cluster.local"
-

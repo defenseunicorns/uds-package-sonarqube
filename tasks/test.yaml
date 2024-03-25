@@ -1,12 +1,14 @@
 tasks:
   - name: health-check
     actions:
+      # StatefulSets don't show conditions themselves so we look for an underlying Pod
       - description: Sonarqube StatefulSet Health Check
         wait:
           cluster:
-            kind: StatefulSet
-            name: sonarqube-sonarqube
+            kind: Pod
+            name: app=sonarqube
             namespace: sonarqube
+            condition: Ready
 
   - name: ingress
     actions:
