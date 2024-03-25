@@ -1,5 +1,15 @@
 # Changelog
 
+## [8.0.3-uds.7](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.6...v8.0.3-uds.7) (2024-03-25)
+
+
+### Miscellaneous
+
+* change to use uds-common test action ([#54](https://github.com/defenseunicorns/uds-package-sonarqube/issues/54)) ([b16c98a](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b16c98aef3dfe0b0458dada35e518d1118eec200))
+* CI Docs shim ([#57](https://github.com/defenseunicorns/uds-package-sonarqube/issues/57)) ([714817c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/714817c8d1e694e80c76c079190cad69475c9b50))
+* implement upgrade tests for sonarqube ([#60](https://github.com/defenseunicorns/uds-package-sonarqube/issues/60)) ([7bdd021](https://github.com/defenseunicorns/uds-package-sonarqube/commit/7bdd0215c1d6cbe47de2771acac2e86716061a89))
+* update CODEOWNERS to new style/group ([#58](https://github.com/defenseunicorns/uds-package-sonarqube/issues/58)) ([28ff17f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/28ff17f4dcad7113522ffd19ec70e5c336935737))
+
 ## [8.0.3-uds.6](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.5...v8.0.3-uds.6) (2024-03-08)
 
 
