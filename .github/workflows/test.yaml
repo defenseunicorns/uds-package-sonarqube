@@ -45,19 +45,19 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Environment setup
-        uses: defenseunicorns/uds-common/.github/actions/setup@213fc1778187871c46e067db9d74b5d51ceb0976 # v0.3.5
+        uses: defenseunicorns/uds-common/.github/actions/setup@05f42bb3117b66ebef8c72ae050b34bce19385f5 # v0.3.6
         with:
           username: ${{secrets.IRON_BANK_ROBOT_USERNAME}}
           password: ${{secrets.IRON_BANK_ROBOT_PASSWORD}}
 
       - name: Test
-        uses: defenseunicorns/uds-common/.github/actions/test@213fc1778187871c46e067db9d74b5d51ceb0976 # v0.3.5
+        uses: defenseunicorns/uds-common/.github/actions/test@05f42bb3117b66ebef8c72ae050b34bce19385f5 # v0.3.6
         with:
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
 
       - name: Save logs
         if: always()
-        uses: defenseunicorns/uds-common/.github/actions/save-logs@213fc1778187871c46e067db9d74b5d51ceb0976 # v0.3.5
+        uses: defenseunicorns/uds-common/.github/actions/save-logs@05f42bb3117b66ebef8c72ae050b34bce19385f5 # v0.3.6
         with:
           suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
