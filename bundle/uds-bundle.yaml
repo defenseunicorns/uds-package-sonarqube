@@ -9,7 +9,7 @@ metadata:
 packages:
   - name: dev-postgres
     repository: ghcr.io/defenseunicorns/packages/uds/dev-postgres
-    ref: 0.0.1
+    ref: 0.0.2
   
   - name: dev-secrets
     path: ../
