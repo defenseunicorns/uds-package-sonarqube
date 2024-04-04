@@ -4,17 +4,18 @@ OpenShift:
 edition: "community"
 
 sonarProperties:
-  sonar.auth.saml.enabled: ###ZARF_VAR_SONARQUBE_IDAM_ENABLED###
-  sonar.core.serverBaseURL: https://sonarqube.###ZARF_VAR_DOMAIN###
-  sonar.auth.saml.applicationId: ###ZARF_VAR_SONARQUBE_IDAM_CLIENT_ID###
-  sonar.auth.saml.providerName: ###ZARF_VAR_SONARQUBE_IDAM_PROVIDER_NAME###
-  sonar.auth.saml.providerId: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###
-  sonar.auth.saml.loginUrl: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###/protocol/saml
-  sonar.auth.saml.certificate.secured: ###ZARF_VAR_SONARQUBE_IDAM_SAML_CERT###
-  sonar.auth.saml.user.login: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_LOGIN###
-  sonar.auth.saml.user.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_NAME###
-  sonar.auth.saml.user.email: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_EMAIL###
-  sonar.auth.saml.group.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_GROUP###
+  sonar.auth.saml.enabled: true
+  sonar.core.serverBaseURL: https://sonarqube.uds.dev
+  sonar.auth.saml.applicationId: sonarqube
+  sonar.auth.saml.providerName: "Keycloak"
+  sonar.auth.saml.providerId: " https://sso.uds.dev/realms/uds"
+  sonar.auth.saml.loginUrl: "https://sso.uds.dev/realms/uds/protocol/saml"
+  sonar.auth.saml.user.login: login
+  sonar.auth.saml.user.name: name
+  sonar.auth.saml.user.email: email
+
+sonarSecretProperties: sonarqube-sso
+
 
 monitoring:
   enabled: true

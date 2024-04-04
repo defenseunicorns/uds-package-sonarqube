@@ -19,7 +19,7 @@ variables:
   - name: SONARQUBE_IDAM_CLIENT_ID
     default: ""
   - name: SONARQUBE_IDAM_PROVIDER_NAME
-    default: ""
+    default: "Keycloak"
   - name: SONARQUBE_IDAM_REALM_URL
     default: ""
   - name: SONARQUBE_IDAM_SAML_CERT
