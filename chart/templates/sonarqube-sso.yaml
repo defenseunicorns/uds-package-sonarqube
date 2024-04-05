@@ -6,7 +6,7 @@ metadata:
 spec:
   sso:
     - name: Sonarqube Client
-      clientId: sonarqube-client
+      clientId: sonarqube
       redirectUris:
         - "https://sonarqube.uds.dev/oauth2/callback/saml"
       protocol: saml
@@ -39,4 +39,4 @@ spec:
       secretName: sonarqube-sso
       secretTemplate:
         secret.properties: |
-            sonar.auth.saml.certificate.secured: MIIClTCCAX0CBgGOpIl9cDANBgkqhkiG9w0BAQsFADAOMQwwCgYDVQQDDAN1ZHMwHhcNMjQwNDAzMTUxNTU3WhcNMzQwNDAzMTUxNzM3WjAOMQwwCgYDVQQDDAN1ZHMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDMdfKW4QCoeVgF99ftzFAIonKGwf3pNn+O3cjC+jMxiBMvfztMmyxYJ6PlXf66o2AObaCRfHKdj/SOAeoJnqzB0fNFtAbfYt5mgjXxK5B6V8VPPRLagShD1R26R6uL988sY2jyeCRaW7y0VhlAcpQqPecNgRHcnNtcNHsUazVutjnKe58k8XDtRSzYBhH6R+uD5VdH03xxADbcHbye7Kye+tMw6nn5JJCfNEzcmdQw6Uk+sL0gI6y29DTQ7mwzYxp/SAWIPP2ZsXj/tzmTcgkGUdlaMfQqhmNPd9xUZSLjbQWdMNyhOSiU853niv2KIGQyhEWGEGetwF84QkVVhaQVAgMBAAEwDQYJKoZIhvcNAQELBQADggEBADyWGD+kILVDmFEP+kl9JEZshKzRJtZ0jywyJCqdKwAkk1iwkO2f5B3a8hUDUrI3VqBD+OCWDqEo6TH5uBef1ShXstjOx5CcrtxPIDERF1uD3pkY95MddsooShUX2rMXTo/5gHRxw6UBm3iYApAqS2jus3w7EvVIkGxWq6x1tAnpdR3ZV1CMfQ8KyY6dkiLwGkGW56pd/8hBDXCx56wDhY3WoL7nKOo7BFVrpssZFR0BTjjNBZPBsjNMKI2vbWzHqgV0GaDK8+XAuivPMRBZbz3flDuO4bQ4IPJigV5lBavwS3sFRp45+cm/47xXrKlqNi4zB+3GW4wlvlXElOEiaRc=
+            sonar.auth.saml.certificate.secured: clientField(samlCertificate)
