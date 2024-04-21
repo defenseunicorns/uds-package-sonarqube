@@ -10,33 +10,16 @@ spec:
       redirectUris:
         - "https://sonarqube.uds.dev/oauth2/callback/saml"
       protocol: saml
-      defaultClientScopes: []
+      defaultClientScopes:
+        - "mapper-saml-email-email"
+        - "mapper-saml-username-login"
+        - "mapper-saml-username-name"
+
       attributes:
         saml.client.signature: "false"
-      protocolMappers:
-        - name: "Name"
-          protocol: "saml"
-          protocolMapper: "saml-user-property-mapper"
-          config:
-            user.attribute: "Username"
-            attribute.nameformat: "Basic"
-            attribute.name: "name"
-        - name: "Email"
-          protocol: "saml"
-          protocolMapper: "saml-user-property-mapper"
-          config:
-            user.attribute: "Email"
-            attribute.nameformat: "Basic"
-            attribute.name: "email"
-        - name: "Login"
-          protocol: "saml"
-          protocolMapper: "saml-user-property-mapper"
-          config:
-            user.attribute: "Username"
-            attribute.nameformat: "Basic"
-            attribute.name: "login"
 
       secretName: sonarqube-sso
       secretTemplate:
         secret.properties: |
-            sonar.auth.saml.certificate.secured: clientField(samlCertificate)
+            sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
+
