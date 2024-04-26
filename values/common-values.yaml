@@ -3,8 +3,9 @@ OpenShift:
 
 edition: "community"
 
+# Name of the secret from which to load additional properties: https://community.sonarsource.com/t/additional-sonar-properties-to-load-from-a-secret/73748
+# This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
 sonarSecretProperties: sonarqube-sso
-
 
 monitoring:
   enabled: true
@@ -33,4 +34,13 @@ postgresql:
   service:
     port: 5432
 
-domain: ###ZARF_VAR_DOMAIN###
+# upstream chart has some more reasonable resources, been testing with these
+# resources:
+#   limits:
+#     cpu: 800m
+#     memory: 6144M
+#     ephemeral-storage: 512000M
+#   requests:
+#     cpu: 400m
+#     memory: 2048M
+#     ephemeral-storage: 1536M

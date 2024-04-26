@@ -4,12 +4,11 @@ metadata:
   name: sonarqube
   namespace: {{ .Release.Namespace }}
 spec:
-  {{- if .Values.sso.enabled }}
   sso:
     - name: Sonarqube Client
-      clientId: uds-core-sonarqube
+      clientId: {{ .Values.sso.clientId }}
       redirectUris:
-        - "https://sonarqube.uds.dev/oauth2/callback/saml"
+        - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
       protocol: saml
       defaultClientScopes:
         - "mapper-saml-email-email"
@@ -20,19 +19,19 @@ spec:
         saml.client.signature: "false"
 
       secretName: sonarqube-sso
+      # This secret template configures the sonarqube saml support documented here: https://docs.sonarsource.com/sonarqube/latest/instance-administration/authentication/saml/overview/
       secretTemplate:
         secret.properties: |
             sonar.auth.saml.enabled: {{ .Values.sso.enabled }}
             sonar.core.serverBaseURL: https://sonarqube.{{ .Values.domain }}
-            sonar.auth.saml.applicationId: uds-core-sonarqube
-            sonar.auth.saml.providerName: Keycloak
+            sonar.auth.saml.applicationId: {{ .Values.sso.clientId }}
+            sonar.auth.saml.providerName: {{ .Values.sso.saml.providerName }}
             sonar.auth.saml.providerId: https://sso.{{ .Values.domain }}/realms/uds
             sonar.auth.saml.loginUrl: https://sso.{{ .Values.domain }}/realms/uds/protocol/saml
             sonar.auth.saml.user.login: {{ .Values.sso.saml.user.login }}
             sonar.auth.saml.user.name: {{ .Values.sso.saml.user.name }}
             sonar.auth.saml.user.email: {{ .Values.sso.saml.user.email }}
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
-  {{- end }}
   network:
     expose:
       - service: sonarqube-sonarqube
