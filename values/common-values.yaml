@@ -3,17 +3,6 @@ OpenShift:
 
 edition: "community"
 
-sonarProperties:
-  sonar.auth.saml.enabled: true
-  sonar.core.serverBaseURL: https://sonarqube.uds.dev
-  sonar.auth.saml.applicationId: sonarqube
-  sonar.auth.saml.providerName: "Keycloak"
-  sonar.auth.saml.providerId: " https://sso.uds.dev/realms/uds"
-  sonar.auth.saml.loginUrl: "https://sso.uds.dev/realms/uds/protocol/saml"
-  sonar.auth.saml.user.login: login
-  sonar.auth.saml.user.name: name
-  sonar.auth.saml.user.email: email
-
 sonarSecretProperties: sonarqube-sso
 
 

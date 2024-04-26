@@ -1,0 +1,8 @@
+domain: "###ZARF_VAR_DOMAIN###"
+sso:
+  enabled: true
+  saml:
+    user:
+      login: login
+      name: name
+      email: email
