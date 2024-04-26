@@ -18,3 +18,21 @@ spec:
         podLabels:
           app: sonarqube
         remoteGenerated: Anywhere
+  sso:
+    - name: Sonarqube Client
+      clientId: sonarqube
+      redirectUris:
+        - "https://sonarqube.uds.dev/oauth2/callback/saml"
+      protocol: saml
+      defaultClientScopes:
+        - "mapper-saml-email-email"
+        - "mapper-saml-username-login"
+        - "mapper-saml-username-name"
+
+      attributes:
+        saml.client.signature: "false"
+
+      secretName: sonarqube-sso
+      secretTemplate:
+        secret.properties: |
+            sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
