@@ -33,14 +33,3 @@ postgresql:
   postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
   service:
     port: 5432
-
-# upstream chart has some more reasonable resources, been testing with these
-# resources:
-#   limits:
-#     cpu: 800m
-#     memory: 6144M
-#     ephemeral-storage: 512000M
-#   requests:
-#     cpu: 400m
-#     memory: 2048M
-#     ephemeral-storage: 1536M
