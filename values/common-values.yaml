@@ -3,18 +3,9 @@ OpenShift:
 
 edition: "community"
 
-sonarProperties:
-  sonar.auth.saml.enabled: ###ZARF_VAR_SONARQUBE_IDAM_ENABLED###
-  sonar.core.serverBaseURL: https://sonarqube.###ZARF_VAR_DOMAIN###
-  sonar.auth.saml.applicationId: ###ZARF_VAR_SONARQUBE_IDAM_CLIENT_ID###
-  sonar.auth.saml.providerName: ###ZARF_VAR_SONARQUBE_IDAM_PROVIDER_NAME###
-  sonar.auth.saml.providerId: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###
-  sonar.auth.saml.loginUrl: ###ZARF_VAR_SONARQUBE_IDAM_REALM_URL###/protocol/saml
-  sonar.auth.saml.certificate.secured: ###ZARF_VAR_SONARQUBE_IDAM_SAML_CERT###
-  sonar.auth.saml.user.login: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_LOGIN###
-  sonar.auth.saml.user.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_NAME###
-  sonar.auth.saml.user.email: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_EMAIL###
-  sonar.auth.saml.group.name: ###ZARF_VAR_SONARQUBE_IDAM_ATTR_GROUP###
+# Name of the secret from which to load additional properties: https://community.sonarsource.com/t/additional-sonar-properties-to-load-from-a-secret/73748
+# This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
+sonarSecretProperties: sonarqube-sso
 
 monitoring:
   enabled: true
@@ -42,5 +33,3 @@ postgresql:
   postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
   service:
     port: 5432
-
-domain: ###ZARF_VAR_DOMAIN###

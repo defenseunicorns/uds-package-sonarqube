@@ -4,6 +4,36 @@ metadata:
   name: sonarqube
   namespace: {{ .Release.Namespace }}
 spec:
+  {{- if .Values.sso.enabled }}
+  sso:
+    - name: SonarQube Login
+      clientId: uds-swf-sonarqube
+      redirectUris:
+        - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
+      protocol: saml
+      defaultClientScopes:
+        - "mapper-saml-email-email"
+        - "mapper-saml-username-login"
+        - "mapper-saml-username-name"
+
+      attributes:
+        saml.client.signature: "false"
+
+      secretName: {{ .Values.sso.secretName }}
+      # This secret template configures the sonarqube saml support documented here: https://docs.sonarsource.com/sonarqube/latest/instance-administration/authentication/saml/overview/
+      secretTemplate:
+        secret.properties: |
+            sonar.auth.saml.enabled: {{ .Values.sso.enabled }}
+            sonar.core.serverBaseURL: https://sonarqube.{{ .Values.domain }}
+            sonar.auth.saml.applicationId: clientField(clientId)
+            sonar.auth.saml.providerName: {{ .Values.sso.saml.providerName }}
+            sonar.auth.saml.providerId: https://sso.{{ .Values.domain }}/realms/uds
+            sonar.auth.saml.loginUrl: https://sso.{{ .Values.domain }}/realms/uds/protocol/saml
+            sonar.auth.saml.user.login: login
+            sonar.auth.saml.user.name: name
+            sonar.auth.saml.user.email: email
+            sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
+  {{- end }}
   network:
     expose:
       - service: sonarqube-sonarqube
