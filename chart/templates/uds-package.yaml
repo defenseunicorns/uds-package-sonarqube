@@ -28,9 +28,9 @@ spec:
             sonar.auth.saml.providerName: {{ .Values.sso.saml.providerName }}
             sonar.auth.saml.providerId: https://sso.{{ .Values.domain }}/realms/uds
             sonar.auth.saml.loginUrl: https://sso.{{ .Values.domain }}/realms/uds/protocol/saml
-            sonar.auth.saml.user.login: {{ .Values.sso.saml.user.login }}
-            sonar.auth.saml.user.name: {{ .Values.sso.saml.user.name }}
-            sonar.auth.saml.user.email: {{ .Values.sso.saml.user.email }}
+            sonar.auth.saml.user.login: login
+            sonar.auth.saml.user.name: name
+            sonar.auth.saml.user.email: email
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
   network:
     expose:
