@@ -5,7 +5,7 @@ metadata:
   namespace: {{ .Release.Namespace }}
 spec:
   sso:
-    - name: Sonarqube Client
+    - name: SonarQube Login
       clientId: {{ .Values.sso.clientId }}
       redirectUris:
         - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
