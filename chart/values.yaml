@@ -3,7 +3,7 @@ sso:
   enabled: true
   clientId: uds-core-sonarqube
   saml:
-    providerName: Keycloak # This is displayed on the login screen ("Log in with <providerName>")
+    providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
     user:
       login: login
       name: name
