@@ -3,4 +3,3 @@ sso:
   enabled: true
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
-
