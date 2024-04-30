@@ -1,7 +1,6 @@
 domain: "###ZARF_VAR_DOMAIN###"
 sso:
   enabled: true
-  clientId: uds-core-sonarqube
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
     user:

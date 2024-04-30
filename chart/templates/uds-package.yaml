@@ -6,7 +6,7 @@ metadata:
 spec:
   sso:
     - name: SonarQube Login
-      clientId: {{ .Values.sso.clientId }}
+      clientId: uds-swf-sonarqube
       redirectUris:
         - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
       protocol: saml
@@ -24,7 +24,7 @@ spec:
         secret.properties: |
             sonar.auth.saml.enabled: {{ .Values.sso.enabled }}
             sonar.core.serverBaseURL: https://sonarqube.{{ .Values.domain }}
-            sonar.auth.saml.applicationId: {{ .Values.sso.clientId }}
+            sonar.auth.saml.applicationId: clientField(clientId)
             sonar.auth.saml.providerName: {{ .Values.sso.saml.providerName }}
             sonar.auth.saml.providerId: https://sso.{{ .Values.domain }}/realms/uds
             sonar.auth.saml.loginUrl: https://sso.{{ .Values.domain }}/realms/uds/protocol/saml
