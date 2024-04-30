@@ -7,6 +7,10 @@ metadata:
   version: "8.0.3-uds.6"
   # x-release-please-end
 
+constants:
+  - name: SONARQUBE_SSO_SECRET_NAME
+    default: "sonarqube-sso"
+
 variables:
   - name: SONARQUBE_DEPENDS_ON
     default: "[]"
@@ -20,8 +24,6 @@ variables:
     default: "sonarqube"
   - name: SONARQUBE_DB_ENDPOINT
     default: "postgres"
-  - name: SONARQUBE_SSO_SECRET_NAME
-    default: "sonarqube-sso"
 
 components:
   - name: sonarqube

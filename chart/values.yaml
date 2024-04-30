@@ -1,6 +1,6 @@
 domain: "###ZARF_VAR_DOMAIN###"
 sso:
-  enabled: true
-  secretName: "###ZARF_VAR_SONARQUBE_SSO_SECRET_NAME###"
+  enabled: false
+  secretName: "###ZARF_CONST_SONARQUBE_SSO_SECRET_NAME###"
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
