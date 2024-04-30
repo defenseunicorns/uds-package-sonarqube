@@ -5,7 +5,7 @@ edition: "community"
 
 # Name of the secret from which to load additional properties: https://community.sonarsource.com/t/additional-sonar-properties-to-load-from-a-secret/73748
 # This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
-sonarSecretProperties: "###ZARF_CONST_SONARQUBE_SSO_SECRET_NAME###"
+sonarSecretProperties: sonarqube-sso
 
 monitoring:
   enabled: true
