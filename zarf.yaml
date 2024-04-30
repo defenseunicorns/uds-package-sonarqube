@@ -20,6 +20,8 @@ variables:
     default: "sonarqube"
   - name: SONARQUBE_DB_ENDPOINT
     default: "postgres"
+  - name: SONARQUBE_SSO_SECRET_NAME
+    default: "sonarqube-sso"
 
 components:
   - name: sonarqube

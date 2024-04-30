@@ -4,6 +4,7 @@ metadata:
   name: sonarqube
   namespace: {{ .Release.Namespace }}
 spec:
+  {{- if .Values.sso.enabled }}
   sso:
     - name: SonarQube Login
       clientId: uds-swf-sonarqube
@@ -18,7 +19,7 @@ spec:
       attributes:
         saml.client.signature: "false"
 
-      secretName: sonarqube-sso
+      secretName: {{ .Values.sso.secretName }}
       # This secret template configures the sonarqube saml support documented here: https://docs.sonarsource.com/sonarqube/latest/instance-administration/authentication/saml/overview/
       secretTemplate:
         secret.properties: |
@@ -32,6 +33,7 @@ spec:
             sonar.auth.saml.user.name: name
             sonar.auth.saml.user.email: email
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
+  {{- end }}
   network:
     expose:
       - service: sonarqube-sonarqube
