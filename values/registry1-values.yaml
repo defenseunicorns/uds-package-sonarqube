@@ -7,3 +7,16 @@ initContainers:
 
 prometheusExporter:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
+
+livenessProbe:
+  exec: null
+  httpGet:
+    path: /
+    scheme: HTTP
+    port: 9000
+readinessProbe:
+  exec: null
+  httpGet:
+    path: /api/system/status
+    scheme: HTTP
+    port: 9000
