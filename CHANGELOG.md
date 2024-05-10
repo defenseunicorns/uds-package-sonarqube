@@ -1,5 +1,26 @@
 # Changelog
 
+## [9.9.2-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.6...v9.9.2-uds.0) (2024-05-10)
+
+
+### Features
+
+* integrate with keycloak ([#63](https://github.com/defenseunicorns/uds-package-sonarqube/issues/63)) ([2583684](https://github.com/defenseunicorns/uds-package-sonarqube/commit/2583684b048207d14213409f62d7c70fea999bb4))
+
+
+### Miscellaneous
+
+* change to use uds-common test action ([#54](https://github.com/defenseunicorns/uds-package-sonarqube/issues/54)) ([b16c98a](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b16c98aef3dfe0b0458dada35e518d1118eec200))
+* CI Docs shim ([#57](https://github.com/defenseunicorns/uds-package-sonarqube/issues/57)) ([714817c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/714817c8d1e694e80c76c079190cad69475c9b50))
+* **deps:** update sonarqube support dependencies ([#62](https://github.com/defenseunicorns/uds-package-sonarqube/issues/62)) ([b201543](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b201543bca9912ee47600e05080dece66da3d29d))
+* **deps:** update sonarqube support dependencies ([#64](https://github.com/defenseunicorns/uds-package-sonarqube/issues/64)) ([6eca670](https://github.com/defenseunicorns/uds-package-sonarqube/commit/6eca67019840a6a249840d7ed34a5057be20e516))
+* **deps:** update sonarqube support dependencies ([#66](https://github.com/defenseunicorns/uds-package-sonarqube/issues/66)) ([66474ac](https://github.com/defenseunicorns/uds-package-sonarqube/commit/66474ac6d605972c3cbd3caa8eade8161fa48e08))
+* **deps:** update sonarqube support dependencies ([#68](https://github.com/defenseunicorns/uds-package-sonarqube/issues/68)) ([272523c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/272523c5af9c20dfd29a670bde808ec7c984d295))
+* **deps:** update sonarqube support dependencies ([#69](https://github.com/defenseunicorns/uds-package-sonarqube/issues/69)) ([ca5c73c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ca5c73c3cb93e6e523f97a12173aa5f77a15a8c2))
+* hotfix renovate config registries ([#65](https://github.com/defenseunicorns/uds-package-sonarqube/issues/65)) ([407e661](https://github.com/defenseunicorns/uds-package-sonarqube/commit/407e66133bde030177be6bfbc21f1273f9a1a31a))
+* implement upgrade tests for sonarqube ([#60](https://github.com/defenseunicorns/uds-package-sonarqube/issues/60)) ([7bdd021](https://github.com/defenseunicorns/uds-package-sonarqube/commit/7bdd0215c1d6cbe47de2771acac2e86716061a89))
+* update CODEOWNERS to new style/group ([#58](https://github.com/defenseunicorns/uds-package-sonarqube/issues/58)) ([28ff17f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/28ff17f4dcad7113522ffd19ec70e5c336935737))
+
 ## [8.0.3-uds.6](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.5...v8.0.3-uds.6) (2024-03-08)
 
 

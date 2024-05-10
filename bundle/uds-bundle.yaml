@@ -3,7 +3,7 @@ metadata:
   name: sonarqube-test
   description: A UDS bundle for deploying Sonarqube and it's dependencies on a development cluster
   # x-release-please-start-version
-  version: 8.0.3-uds.6
+  version: 9.9.2-uds.0
   # x-release-please-end
 
 packages:
@@ -18,5 +18,5 @@ packages:
   - name: sonarqube
     path: ../
     # x-release-please-start-version
-    ref: 8.0.3-uds.6
+    ref: 9.9.2-uds.0
     # x-release-please-end
