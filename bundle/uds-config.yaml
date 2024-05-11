@@ -1,6 +1,15 @@
 variables:
-  dev-postgres:
-    db_username: "sonarqube"
-    db_name: "sonarqubedb"
-  sonarqube:
-    sonarqube_db_endpoint: "postgresql.dev-postgres.svc.cluster.local"
+  postgres-operator:
+    postgresql:
+      enabled: true  # Set to false to not create the PostgreSQL resource
+      teamId: "uds"
+      volume:
+        size: "10Gi"
+      numberOfInstances: 2
+      users:
+        sonarqube.sonarqube: []  # database owner
+      databases:
+        sonarqubedb: sonarqube.sonarqube
+      version: "13"
+      ingress:
+        remoteGenerated: Anywhere

@@ -48,3 +48,48 @@ spec:
         podLabels:
           app: sonarqube
         remoteGenerated: Anywhere
+
+      - direction: Egress
+        remoteNamespace: keycloak
+        remoteSelector:
+          app.kubernetes.io/name: keycloak
+        selector:
+          app: sonarqube
+        port: 8080
+        description: "SSO Internal"
+
+      - direction: Egress
+        remoteGenerated: Anywhere
+        selector:
+          app: sonarqube
+        port: 443
+        description: "SSO External"
+
+      - direction: Egress
+        selector:
+          app: sonarqube
+        {{- if .Values.postgres.internal }}
+        remoteNamespace: {{ .Values.postgres.namespace | quote }}
+        remoteSelector:
+          {{ .Values.postgres.selector | toYaml | nindent 10 }}
+        port: {{ .Values.postgres.port }}
+        {{- else }}
+        remoteGenerated: Anywhere
+        {{- end }}
+        description: "Sonarqube Postgres"
+
+      # Custom rules for unanticipated scenarios
+      {{- range .Values.custom }}
+      - direction: {{ .direction }}
+        selector:
+          {{ .selector | toYaml | nindent 10 }}
+        {{- if not .remoteGenerated }}
+        remoteNamespace: {{ .remoteNamespace }}
+        remoteSelector:
+          {{ .remoteSelector | toYaml | nindent 10 }}
+        port: {{ .port }}
+        {{- else }}
+        remoteGenerated: {{ .remoteGenerated }}
+        {{- end }}
+        description: {{ .description }}
+      {{- end }}
