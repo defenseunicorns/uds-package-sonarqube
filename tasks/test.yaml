@@ -18,9 +18,9 @@ tasks:
           STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | yq '.status')
           echo "SonarQube system status: ${STATUS}"
           if [ $STATUS != "UP" ]; then
+            sleep 10
             exit 1
           fi
-          sleep 10
 
   - name: ui
     description: SonarQube UI Checks
