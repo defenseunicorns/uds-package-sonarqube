@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.9.2-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.2-uds.0...v9.9.2-uds.1) (2024-05-13)
+
+
+### Features
+
+* update netpols and swap postgres chart ([#74](https://github.com/defenseunicorns/uds-package-sonarqube/issues/74)) ([a72bc8e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/a72bc8e041dbb91799e53cf9b6b86493f090ed40))
+
 ## [9.9.2-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v8.0.3-uds.6...v9.9.2-uds.0) (2024-05-10)
 
 
