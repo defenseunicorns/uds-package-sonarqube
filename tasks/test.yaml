@@ -13,7 +13,7 @@ tasks:
   - name: ingress
     actions:
       - description: SonarQube UI Status Check
-        maxRetries: 20
+        maxRetries: 30
         cmd: |
           STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | yq '.status')
           echo "SonarQube system status: ${STATUS}"
