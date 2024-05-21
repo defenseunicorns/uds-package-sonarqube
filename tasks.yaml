@@ -53,6 +53,7 @@ tasks:
       - task: create-sq-test-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
+      - task: setup:create-doug-user
       - task: test:health-check
       - task: test:ingress
       - task: test:ui
@@ -63,6 +64,7 @@ tasks:
       - task: create-sq-latest-release-bundle
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
+      - task: setup:create-doug-user
       - task: create-sq-test-bundle
       - task: deploy:test-bundle
       - task: test:health-check
