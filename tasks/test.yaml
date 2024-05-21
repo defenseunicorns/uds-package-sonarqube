@@ -15,7 +15,7 @@ tasks:
       - description: SonarQube UI Status Check
         maxRetries: 30
         cmd: |
-          STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | yq '.status')
+          STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | ./uds zarf tools yq '.status')
           echo "SonarQube system status: ${STATUS}"
           if [ $STATUS != "UP" ]; then
             sleep 10
