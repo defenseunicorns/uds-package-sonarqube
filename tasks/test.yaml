@@ -20,11 +20,11 @@ tasks:
             code: 200
 
   - name: ui
-      description: Sonarqube UI Checks
-      actions:
-        - cmd: npm ci
-          dir: tests
-        - cmd: npx playwright install --with-deps
-          dir: tests
-        - cmd: npx playwright test
-          dir: tests
+    description: Sonarqube UI Checks
+    actions:
+      - cmd: npm ci
+        dir: tests
+      - cmd: npx playwright install --with-deps
+        dir: tests
+      - cmd: npx playwright test
+        dir: tests
