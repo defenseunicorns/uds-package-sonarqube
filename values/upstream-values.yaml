@@ -1,9 +1,9 @@
 image:
   repository: sonarqube
-  tag: 9.9.3-community
+  tag: 10.5.1-community
 
 initContainers:
-  image: busybox:1.32
+  image: busybox:1.36
 
 prometheusExporter:
-  image: curlimages/curl:7.76.1
+  image: curlimages/curl:8.8.0
