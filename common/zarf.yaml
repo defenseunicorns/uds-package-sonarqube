@@ -17,6 +17,6 @@ components:
         # see note in README.md about use of registry1 chart for both flavors
         url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
         gitPath: chart
-        version: "8.0.3-bb.0"
+        version: "8.0.4-bb.5"
         valuesFiles:
           - ../values/common-values.yaml
