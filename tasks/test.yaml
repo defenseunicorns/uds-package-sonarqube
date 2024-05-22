@@ -2,7 +2,7 @@ tasks:
   - name: health-check
     actions:
       # StatefulSets don't show conditions themselves so we look for an underlying Pod
-      - description: Sonarqube StatefulSet Health Check
+      - description: SonarQube StatefulSet Health Check
         wait:
           cluster:
             kind: Pod
@@ -12,9 +12,22 @@ tasks:
 
   - name: ingress
     actions:
-      - description: Sonarqube UI Health Check
-        wait:
-          network:
-            protocol: https
-            address: sonarqube.uds.dev
-            code: 200
+      - description: SonarQube UI Status Check
+        maxRetries: 30
+        cmd: |
+          STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | ./uds zarf tools yq '.status')
+          echo "SonarQube system status: ${STATUS}"
+          if [ $STATUS != "UP" ]; then
+            sleep 10
+            exit 1
+          fi
+
+  - name: ui
+    description: SonarQube UI Checks
+    actions:
+      - cmd: npm ci
+        dir: tests
+      - cmd: npx playwright install --with-deps
+        dir: tests
+      - cmd: npx playwright test
+        dir: tests
