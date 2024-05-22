@@ -50,6 +50,6 @@ components:
         valuesFiles:
           - values/upstream-values.yaml
     images:
-      - "sonarqube:10.5.1-community"
+      - "sonarqube:9.9.5-community"
       - "curlimages/curl:8.8.0"
       - "busybox:1.36"
