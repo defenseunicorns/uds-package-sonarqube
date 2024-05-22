@@ -1,5 +1,14 @@
 # Changelog
 
+## [9.9.5-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.2-uds.1...v9.9.5-uds.0) (2024-05-22)
+
+
+### Miscellaneous
+
+* add basic smoke test for sonarqube with sso ([#77](https://github.com/defenseunicorns/uds-package-sonarqube/issues/77)) ([8db5ada](https://github.com/defenseunicorns/uds-package-sonarqube/commit/8db5ada567c0182331649da1aa307fcbd31fe733))
+* **deps:** update sonarqube package dependencies ([#61](https://github.com/defenseunicorns/uds-package-sonarqube/issues/61)) ([c541ca1](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c541ca1ce87e6433ab63b63abfde937e64a0838b))
+* **deps:** update sonarqube support dependencies ([#72](https://github.com/defenseunicorns/uds-package-sonarqube/issues/72)) ([eec316c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/eec316c9aec312195105dc3a5d8f4a551be42b31))
+
 ## [9.9.2-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.2-uds.0...v9.9.2-uds.1) (2024-05-13)
 
 
