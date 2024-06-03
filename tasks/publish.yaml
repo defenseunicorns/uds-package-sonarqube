@@ -15,7 +15,7 @@ tasks:
         with:
           architecture: amd64
 
-      - description: Test the created package
+      - description: Test the AMD64 package
         task: run-tests
 
       - description: Create the ARM64 package
