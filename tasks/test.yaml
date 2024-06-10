@@ -1,4 +1,10 @@
 tasks:
+  - name: all
+    actions:
+      - task: health-check
+      - task: ingress
+      - task: ui
+
   - name: health-check
     actions:
       # StatefulSets don't show conditions themselves so we look for an underlying Pod
