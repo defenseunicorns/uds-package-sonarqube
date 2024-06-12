@@ -5,6 +5,8 @@ sso:
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
 postgres:
+  password: ""
+
   internal: true
   selector:
     cluster-name: pg-cluster
