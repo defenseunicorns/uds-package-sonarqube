@@ -1,5 +1,21 @@
 # Changelog
 
+## [9.9.5-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.0...v9.9.5-uds.1) (2024-06-20)
+
+
+### Features
+
+* add wait for SQ package CR readiness ([#85](https://github.com/defenseunicorns/uds-package-sonarqube/issues/85)) ([3f1db0e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/3f1db0e054012f98f75328971987b163b0e27fff))
+* allow for Postgres password secret generation ([#88](https://github.com/defenseunicorns/uds-package-sonarqube/issues/88)) ([84503e5](https://github.com/defenseunicorns/uds-package-sonarqube/commit/84503e592fb0726809d8ba6e7c99e9c27507ba76))
+
+
+### Miscellaneous
+
+* add debug output on tag-and-release and test workflows ([#90](https://github.com/defenseunicorns/uds-package-sonarqube/issues/90)) ([ad11fca](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ad11fca8641fcb3a3125dbe022993137df20772c))
+* add pre release testing ([#87](https://github.com/defenseunicorns/uds-package-sonarqube/issues/87)) ([f024ebf](https://github.com/defenseunicorns/uds-package-sonarqube/commit/f024ebfc32829e0f186ab5b49aa67efa5dc8b8da))
+* **deps:** update sonarqube support dependencies ([#80](https://github.com/defenseunicorns/uds-package-sonarqube/issues/80)) ([ab2bd2f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ab2bd2f055b8617925db2ceed086093375b31126))
+* **deps:** update sonarqube support dependencies ([#83](https://github.com/defenseunicorns/uds-package-sonarqube/issues/83)) ([cc7e869](https://github.com/defenseunicorns/uds-package-sonarqube/commit/cc7e869ee75d41d467ac5e15b386355ad0f17542))
+
 ## [9.9.5-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.2-uds.1...v9.9.5-uds.0) (2024-05-22)
 
 
