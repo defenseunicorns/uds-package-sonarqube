@@ -47,7 +47,7 @@ jobs:
           ghToken: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish Package
-        run: UDS_ARCHITECTURE=${{ matrix.architecture }} uds run -f tasks/publish.yaml package --set FLAVOR=${{ matrix.flavor }}
+        run: uds run -f tasks/publish.yaml package --set FLAVOR=${{ matrix.flavor }}
 
       - name: Debug Output
         if: ${{ always() }}
@@ -57,4 +57,4 @@ jobs:
         if: always()
         uses: defenseunicorns/uds-common/.github/actions/save-logs@61450a210fd16cf14157ee417f9682a4664c05e5 # v0.6.0
         with:
-          suffix: ${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
+          suffix: ${{ matrix.flavor }}-${{ matrix.architecture }}-${{ github.run_id }}-${{ github.run_attempt }}
