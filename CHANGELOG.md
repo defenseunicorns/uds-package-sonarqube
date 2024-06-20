@@ -1,5 +1,12 @@
 # Changelog
 
+## [9.9.5-uds.2](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.1...v9.9.5-uds.2) (2024-06-20)
+
+
+### Miscellaneous
+
+* add architecture to save logs suffix on tag-and-release ([#92](https://github.com/defenseunicorns/uds-package-sonarqube/issues/92)) ([5fbe70c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/5fbe70ce2cbbd83363e3a03b19bf2a3848eade3f))
+
 ## [9.9.5-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.0...v9.9.5-uds.1) (2024-06-20)
 
 
