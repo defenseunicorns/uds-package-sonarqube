@@ -1,6 +1,6 @@
 image:
   repository: sonarqube
-  tag: 9.9.5-community
+  tag: 10.6.0-community
 
 initContainers:
   image: busybox:1.36
