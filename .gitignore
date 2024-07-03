@@ -4,6 +4,7 @@
 *.tar.zst
 ~/
 .DS_Store
+.vscode/
 defense-unicorns-distro/preflight.sh
 .terraform
 tmp
