@@ -1,0 +1,9 @@
+image:
+  repository: cgr.dev/du-uds-defenseunicorns/sonarqube
+  tag: 10.6.0
+
+initContainers:
+  image: cgr.dev/du-uds-defenseunicorns/busybox-fips:1.36
+
+prometheusExporter:
+  image: cgr.dev/du-uds-defenseunicorns/curl-fips:8-dev

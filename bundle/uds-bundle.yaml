@@ -48,3 +48,7 @@ packages:
               value: "sonarqube.sonarqube"
             - path: "jdbcOverwrite.jdbcUrl"
               value: "jdbc:postgresql://pg-cluster.postgres.svc.cluster.local:5432/sonarqubedb"
+            - path: "monitoringPasscodeSecretName"
+              value: "sonarqube-sso"
+            - path: "monitoringPasscodeSecretKey"
+              value: "monitoringPasscode"
