@@ -37,7 +37,7 @@ jobs:
     timeout-minutes: 20
     strategy:
       matrix:
-        flavor: [upstream, registry1]
+        flavor: [upstream, unicorn, registry1]
         type: [install, upgrade]
 
     steps:

@@ -25,7 +25,7 @@ jobs:
     runs-on: ${{ matrix.architecture == 'arm64' && 'uds-swf-ubuntu-arm64-4-core' || 'ubuntu-latest' }}
     strategy:
       matrix:
-        flavor: [upstream, registry1]
+        flavor: [upstream, unicorn, registry1]
         architecture: [amd64, arm64]
         exclude:
           - flavor: registry1
