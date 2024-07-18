@@ -4,7 +4,7 @@ sso:
   secretName: sonarqube-sso
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
-  monitoringPasscode: "define_it"
+monitoringPasscode: "define_it"
 postgres:
   password: ""
 

@@ -63,6 +63,7 @@ initSysctl:
 #   configureNode: false
 
 jdbcOverwrite:
+  enable: true # DEPRECATED: use `jdbcOverwrite.enabled` in v10.7.0
   enabled: true
   jdbcUrl: jdbc:postgresql://###ZARF_VAR_SONARQUBE_DB_ENDPOINT###:5432/###ZARF_VAR_SONARQUBE_DB_NAME###
   jdbcUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###

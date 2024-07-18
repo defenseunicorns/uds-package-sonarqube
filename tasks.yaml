@@ -50,10 +50,10 @@ tasks:
   - name: test-package
     description: Test the health of a SonarQube deployment
     actions:
-      # - task: create-sq-test-bundle
-      # - task: setup:k3d-test-cluster
+      - task: create-sq-test-bundle
+      - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
-      # - task: setup:create-doug-user
+      - task: setup:create-doug-user
       - task: test:all
 
   - name: test-upgrade
