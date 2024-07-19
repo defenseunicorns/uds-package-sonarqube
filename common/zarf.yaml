@@ -14,7 +14,6 @@ components:
         localPath: ../chart
       - name: sonarqube
         namespace: sonarqube
-        # see note in README.md about use of registry1 chart for both flavors
         url: https://SonarSource.github.io/helm-chart-sonarqube
         version: 10.6.1
         valuesFiles:
