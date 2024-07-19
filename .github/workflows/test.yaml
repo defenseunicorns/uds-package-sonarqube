@@ -39,7 +39,15 @@ jobs:
     strategy:
       matrix:
         flavor: [upstream, unicorn, registry1]
-        type: [install, upgrade]
+        type: [install]
+        # type: [install, upgrade]
+        # do not run upgrade tests for unicorn
+        # TODO @marshall: remove after first unicorn release
+        include:
+          - flavor: upstream
+            type: upgrade
+          - flavor: registry1
+            type: upgrade
 
     steps:
       - name: Checkout repository
