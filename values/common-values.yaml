@@ -12,7 +12,7 @@ sonarSecretProperties: sonarqube-sso
 #   enabled: true
 
 prometheusExporter:
-  enabled: true
+  enabled: false
   # jmx_prometheus_javaagent version to download from Maven Central
   version: "0.17.2"
   # Alternative full download URL for the jmx_prometheus_javaagent.jar (overrides prometheusExporter.version)
@@ -44,7 +44,7 @@ prometheusMonitoring:
   #
   podMonitor:
     # Create PodMonitor Resource for Prometheus scraping
-    enabled: true
+    enabled: false
     # (DEPRECATED) Specify a custom namespace where the PodMonitor will be created.
     # This value should not be set, as the PodMonitor's namespace has to match the Release Namespace.
     # namespace: "default"
