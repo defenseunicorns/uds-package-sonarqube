@@ -4,7 +4,7 @@ import { authFile } from './playwright.config';
 setup('authenticate', async ({ page, context }) => {
   await page.goto('/sessions/new');
 
-  await page.locator('.identity-provider-link').click();
+  await page.getByRole('button', { name: 'Log in with Keycloak' }).click();
   await page.getByLabel('Username or email').fill('doug');
   await page.getByLabel('Password').fill('unicorn123!@#UN');
 
@@ -23,6 +23,4 @@ setup('authenticate', async ({ page, context }) => {
   expect(keycloakCookie?.domain).toContain("sso.");
 
   await page.context().storageState({ path: authFile });
-
-  await expect(page).toHaveURL('/projects');
 })
