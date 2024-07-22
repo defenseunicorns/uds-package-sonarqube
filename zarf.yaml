@@ -35,7 +35,7 @@ components:
           - values/registry1-values.yaml
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
-      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube:9.9.5-community"
+      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube:10.6.0-community"
 
   # Note: upstream flavor is experimental
   - name: sonarqube
