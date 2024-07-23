@@ -22,7 +22,6 @@ spec:
       secretName: {{ .Values.sso.secretName }}
       # This secret template configures the sonarqube saml support documented here: https://docs.sonarsource.com/sonarqube/latest/instance-administration/authentication/saml/overview/
       secretTemplate:
-        monitoringPasscode: {{ .Values.monitoringPasscode }}
         secret.properties: |
             sonar.auth.saml.enabled: {{ .Values.sso.enabled }}
             sonar.core.serverBaseURL: https://sonarqube.{{ .Values.domain }}
