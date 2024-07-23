@@ -6,7 +6,7 @@ setup('authenticate', async ({ page, context }) => {
 
   await page.locator('.identity-provider-link').click();
   await page.getByLabel('Username or email').fill('doug');
-  await page.getByLabel('Password').fill('unicorn123!@#UM');
+  await page.getByLabel('Password').fill('unicorn123!@#UN');
 
   await page.getByRole("button", { name: "Log In" }).click();
 
