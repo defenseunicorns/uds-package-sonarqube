@@ -37,3 +37,10 @@ tasks:
         dir: tests
       - cmd: npx playwright test
         dir: tests
+
+  - name: migrate-db
+    actions:
+      - description: Perform DB migrations if necessary
+        cmd: |
+          STATUS=$(curl -XPOST -s 'https://sonarqube.uds.dev/api/system/migrate_db' | ./uds zarf tools yq '.state')
+          echo "SonarQube migration state: ${STATUS}"
