@@ -23,7 +23,7 @@ tasks:
         cmd: |
           STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | ./uds zarf tools yq '.status')
           echo "SonarQube system status: ${STATUS}"
-          if [ $STATUS != "UP" ]; then
+          if [ "$STATUS" != "UP" ]; then
             sleep 10
             exit 1
           fi
