@@ -73,10 +73,3 @@ jdbcOverwrite:
 
 postgresql:
   enabled: false
-  # postgresqlServer: ###ZARF_VAR_SONARQUBE_DB_ENDPOINT###
-  # existingSecret: "sonarqube-postgres"
-  # existingSecretPasswordKey: "password"
-  # postgresqlUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
-  # postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
-  # service:
-  #   port: 5432

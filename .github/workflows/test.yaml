@@ -34,19 +34,16 @@ permissions:
 jobs:
   run-test:
     name: ${{ matrix.type }} ${{ matrix.flavor }}
-    runs-on: ubuntu-latest
+    runs-on: uds-swf-ubuntu-big-boy-4-core
     timeout-minutes: 20
     strategy:
       matrix:
         flavor: [upstream, unicorn, registry1]
-        type: [install]
-        # type: [install, upgrade]
+        type: [install, upgrade]
         # do not run upgrade tests for unicorn
         # TODO @marshall: remove after first unicorn release
-        include:
-          - flavor: upstream
-            type: upgrade
-          - flavor: registry1
+        exclude:
+          - flavor: unicorn
             type: upgrade
 
     steps:
