@@ -29,3 +29,7 @@ components:
                 name: sonarqube
                 namespace: sonarqube
                 condition: "'{.status.phase}'=Ready"
+          - description: Perform DB migrations if necessary
+            cmd: |
+              STATUS=$(curl -XPOST -s "https://sonarqube.$ZARF_VAR_DOMAIN/api/system/migrate_db" | ./zarf tools yq '.state')
+              echo "SonarQube migration state: ${STATUS}"

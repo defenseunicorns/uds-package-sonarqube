@@ -65,5 +65,4 @@ tasks:
       - task: setup:create-doug-user
       - task: create-sq-test-bundle
       - task: deploy:test-bundle
-      - task: test:migrate-db
       - task: test:all
