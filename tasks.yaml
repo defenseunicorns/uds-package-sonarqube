@@ -7,6 +7,8 @@ includes:
   - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.9.0/tasks/pull.yaml
   - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.9.0/tasks/deploy.yaml
   - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v0.9.0/tasks/setup.yaml
+  # TODO: use published version from https://github.com/defenseunicorns/uds-common/pull/188
+  - utils: https://raw.githubusercontent.com/defenseunicorns/uds-common/marshall_target-repo/tasks/utils.yaml
 
 tasks:
   - name: default
@@ -33,8 +35,12 @@ tasks:
   - name: create-sq-latest-release-bundle
     description: Create UDS SonarQube bundle based on the latest release
     actions:
+      - task: utils:determine-repo
+        with:
+          flavor: ${FLAVOR}
       - task: pull:latest-package-release
         with:
+          target_repo: ${TARGET_REPO}
           spoof_release: "true"
       - task: dependencies:create
       - task: create:test-bundle
