@@ -1,23 +1,22 @@
-OpenShift:
-  enabled: false
-
 edition: "community"
 
 # Name of the secret from which to load additional properties: https://community.sonarsource.com/t/additional-sonar-properties-to-load-from-a-secret/73748
 # This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
 sonarSecretProperties: sonarqube-sso
 
-monitoring:
-  enabled: true
+prometheusExporter:
+  enabled: false
+
+prometheusMonitoring:
+  podMonitor:
+    enabled: false
 
 initSysctl:
   enabled: false
 
-elasticsearch:
-  configureNode: false
-
 jdbcOverwrite:
-  enable: true
+  enable: true # DEPRECATED: use `jdbcOverwrite.enabled` in v10.7.0
+  enabled: true
   jdbcUrl: jdbc:postgresql://###ZARF_VAR_SONARQUBE_DB_ENDPOINT###:5432/###ZARF_VAR_SONARQUBE_DB_NAME###
   jdbcUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
   jdbcPassword: null
@@ -26,10 +25,3 @@ jdbcOverwrite:
 
 postgresql:
   enabled: false
-  postgresqlServer: ###ZARF_VAR_SONARQUBE_DB_ENDPOINT###
-  existingSecret: "sonarqube-postgres"
-  existingSecretPasswordKey: "password"
-  postgresqlUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
-  postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
-  service:
-    port: 5432

@@ -22,13 +22,6 @@
       "labels": ["package-deps"],
       "commitMessageTopic": "package-deps",
       "matchDatasources": ["docker", "helm", "git-tags"]
-    },
-    {
-      "groupName": "SonarQube Package Dependencies",
-      "labels": ["package-deps"],
-      "commitMessageTopic": "package-deps",
-      "matchPackageNames": ["https://repo1.dso.mil/big-bang/product/packages/sonarqube.git"],
-      "allowedVersions": "/^8.+-bb.+/"
     }
   ]
 }
