@@ -14,10 +14,8 @@ components:
         localPath: ../chart
       - name: sonarqube
         namespace: sonarqube
-        # see note in README.md about use of registry1 chart for both flavors
-        url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
-        gitPath: chart
-        version: "8.0.4-bb.5"
+        url: https://SonarSource.github.io/helm-chart-sonarqube
+        version: 10.6.1
         valuesFiles:
           - ../values/common-values.yaml
     actions:
@@ -31,3 +29,7 @@ components:
                 name: sonarqube
                 namespace: sonarqube
                 condition: "'{.status.phase}'=Ready"
+          - description: Perform DB migrations if necessary
+            cmd: |
+              STATUS=$(curl -XPOST -s "https://sonarqube.$ZARF_VAR_DOMAIN/api/system/migrate_db" | ./zarf tools yq '.state')
+              echo "SonarQube migration state: ${STATUS}"
