@@ -1,5 +1,24 @@
 # Changelog
 
+## [10.6.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.1...v10.6.0-uds.0) (2024-07-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* update to SonarQube 10, migrate to upstream chart, add `unicorn` CGR flavor ([#100](https://github.com/defenseunicorns/uds-package-sonarqube/issues/100))
+* remove egress anywhere for SSO ([#102](https://github.com/defenseunicorns/uds-package-sonarqube/issues/102))
+
+### Miscellaneous
+
+* add architecture to save logs suffix on tag-and-release ([#92](https://github.com/defenseunicorns/uds-package-sonarqube/issues/92)) ([5fbe70c](https://github.com/defenseunicorns/uds-package-sonarqube/commit/5fbe70ce2cbbd83363e3a03b19bf2a3848eade3f))
+* **deps:** update sonarqube support dependencies ([#101](https://github.com/defenseunicorns/uds-package-sonarqube/issues/101)) ([074db36](https://github.com/defenseunicorns/uds-package-sonarqube/commit/074db362f834d6672603d7e281b265a35c9885cf))
+* **deps:** update sonarqube support dependencies ([#103](https://github.com/defenseunicorns/uds-package-sonarqube/issues/103)) ([ee1c448](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ee1c4484f636b12872838f0ecdadb59a74458f03))
+* **deps:** update sonarqube support dependencies ([#93](https://github.com/defenseunicorns/uds-package-sonarqube/issues/93)) ([47b6bdc](https://github.com/defenseunicorns/uds-package-sonarqube/commit/47b6bdc2fc34a903aa162cf4d08139c40368b9a4))
+* **deps:** update sonarqube support dependencies ([#98](https://github.com/defenseunicorns/uds-package-sonarqube/issues/98)) ([3d342e5](https://github.com/defenseunicorns/uds-package-sonarqube/commit/3d342e5a39e6745f134d5fbf6822948efb03dbe3))
+* remove egress anywhere for SSO ([#102](https://github.com/defenseunicorns/uds-package-sonarqube/issues/102)) ([2c5dd72](https://github.com/defenseunicorns/uds-package-sonarqube/commit/2c5dd7264308e2e94734c6d8aea910bc979bea42))
+* update license ([#89](https://github.com/defenseunicorns/uds-package-sonarqube/issues/89)) ([c078724](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c078724aac7d441824678d467b7ae042e1a43066))
+* update to SonarQube 10, migrate to upstream chart, add `unicorn` CGR flavor ([#100](https://github.com/defenseunicorns/uds-package-sonarqube/issues/100)) ([d3ee872](https://github.com/defenseunicorns/uds-package-sonarqube/commit/d3ee8728a41635702ca056859c0c7b0cc5359b84))
+
 ## [9.9.5-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.0...v9.9.5-uds.1) (2024-06-20)
 
 
