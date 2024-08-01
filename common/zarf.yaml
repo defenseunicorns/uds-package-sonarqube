@@ -20,6 +20,9 @@ components:
           - ../values/common-values.yaml
     actions:
       onDeploy:
+        before:
+          - cmd: ./zarf tools kubectl annotate --overwrite secret -n sonarqube sonarube-postgres meta.helm.sh/release-name=uds-sonarqube-config || true
+          - cmd: ./zarf tools kubectl annotate --overwrite secret -n sonarqube sonarube-postgres meta.helm.sh/release-namespace=sonarqube || true
         after:
           - description: Validate SonarQube Package
             maxTotalSeconds: 300
