@@ -4,6 +4,11 @@ edition: "community"
 # This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
 sonarSecretProperties: sonarqube-sso
 
+sonarProperties:
+  # Update Center requires an internet connection to request https://downloads.sonarsource.com/?prefix=sonarqube/update
+  # We disable it by default.
+  sonar.updatecenter.activate: false
+
 prometheusExporter:
   enabled: false
 
