@@ -34,6 +34,19 @@ spec:
             sonar.auth.saml.user.email: email
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
   {{- end }}
+  monitor:
+    - portName: http
+      targetPort: 9000
+      selector:
+        app: sonarqube
+      kind: PodMonitor
+      path: /api/monitoring/metrics
+      authorization:
+        credentials:
+          key: sonarqube-monitoring
+          name: passcode
+          optional: false
+        type: "Bearer"
   network:
     expose:
       - service: sonarqube-sonarqube
