@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.6.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.0...v10.6.0-uds.1) (2024-08-06)
+
+
+### Features
+
+* enable prometheus metrics for Made for UDS ([#111](https://github.com/defenseunicorns/uds-package-sonarqube/issues/111)) ([c1c569e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c1c569e5222d760c562c736e277e4e7a1e28db79))
+
+
+### Bug Fixes
+
+* disable update center by default ([#108](https://github.com/defenseunicorns/uds-package-sonarqube/issues/108)) ([c298c80](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c298c805bfb2608265cdc92a6bb32e12356e1eaa))
+
 ## [10.6.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v9.9.5-uds.1...v10.6.0-uds.0) (2024-07-31)
 
 
