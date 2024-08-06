@@ -64,6 +64,9 @@ jobs:
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
 
+      - name: Security scan
+        run: fileName=$(find . -name zarf-package-sonarqube-*.zst -printf "%f\n") && docker run -v .:/build ghcr.io/defenseunicorns/uds-security-hub:v0.0.8 -p /build/$fileName -f /build/security-scan.csv && cat security-scan.csv
+
       - name: Debug Output
         if: ${{ always() }}
         uses: defenseunicorns/uds-common/.github/actions/debug-output@e7c0643d3f9d74ce49c7386b48964d2be646d726 # v0.10.0
