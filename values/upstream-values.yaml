@@ -4,6 +4,3 @@ image:
 
 initContainers:
   image: busybox:1.36
-
-prometheusExporter:
-  image: uds-package-sonarqube/monitoring:latest
