@@ -22,6 +22,18 @@ variables:
     default: "postgres"
 
 components:
+  - name: sonarqube-prometheus-image
+    required: true
+    images:
+      - uds-package-sonarqube/monitoring:latest
+    actions:
+      onCreate:
+        before:
+          # we always build on amd64 because that is the target architecture for the plugin binaries
+          # but we still need fake arm64 images because @zachariahmiller said so
+          - cmd: |
+              docker buildx build --load src/monitoring-image -t uds-package-sonarqube/monitoring:latest --platform linux/amd64
+
   - name: sonarqube
     required: true
     description: "Deploy sonarqube"
