@@ -87,6 +87,24 @@ spec:
         {{- end }}
         description: "Sonarqube Postgres"
 
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8000
+        description: "Web Bean Monitor"
+
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8001
+        description: "CE Bean Monitor"
+
       # Custom rules for unanticipated scenarios
       {{- range .Values.custom }}
       - direction: {{ .direction }}
