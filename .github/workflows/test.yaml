@@ -67,7 +67,7 @@ jobs:
           type: ${{ matrix.type }}
 
       - name: Security scan
-        run: fileName=$(find . -name zarf-package-sonarqube-*.zst -printf "%f\n") && docker run -v .:/build ghcr.io/defenseunicorns/uds-security-hub:v0.0.8 -p /build/$fileName -f /build/security-scan.csv && cat security-scan.csv
+        run: touch security-scan.csv && fileName=$(find . -name zarf-package-sonarqube-*.zst -printf "%f\n") && docker run -v .:/build ghcr.io/defenseunicorns/uds-security-hub:v0.0.8 -p /build/$fileName -f /build/security-scan.csv && cat security-scan.csv
 
       - name: Debug Output
         if: ${{ always() }}
