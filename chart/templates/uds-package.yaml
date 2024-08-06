@@ -43,8 +43,8 @@ spec:
       path: /api/monitoring/metrics
       authorization:
         credentials:
-          key: sonarqube-monitoring
-          name: passcode
+          name: sonarqube-monitoring
+          key: passcode
           optional: false
         type: "Bearer"
   network:
