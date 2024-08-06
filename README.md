@@ -1,4 +1,4 @@
-# 🏭 UDS SonarQube Zarf Package
+# 🏭 UDS SonarQube Package
 
 [<img alt="Made for UDS" src="https://raw.githubusercontent.com/defenseunicorns/uds-common/main/docs/made-for-uds.svg" height="20px"/>](https://github.com/defenseunicorns/uds-core)
 [![Latest Release](https://img.shields.io/github/v/release/defenseunicorns/uds-package-sonarqube)](https://github.com/defenseunicorns/uds-package-sonarqube/releases)
