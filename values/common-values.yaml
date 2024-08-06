@@ -10,7 +10,11 @@ sonarProperties:
   sonar.updatecenter.activate: false
 
 prometheusExporter:
-  enabled: false
+  enabled: true
+  image: uds-package-sonarqube/monitoring:latest
+
+monitoringPasscodeSecretName: sonarqube-monitoring
+monitoringPasscodeSecretKey: passcode
 
 prometheusMonitoring:
   podMonitor:

@@ -4,6 +4,3 @@ image:
 
 initContainers:
   image: busybox:1.36
-
-prometheusExporter:
-  image: curlimages/curl:8.8.0

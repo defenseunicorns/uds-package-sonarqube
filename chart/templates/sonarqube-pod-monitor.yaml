@@ -1,0 +1,25 @@
+# This is required because of unconfigurable port names for the Web and CE bean monitoring endpoints
+{{- if .Capabilities.APIVersions.Has "monitoring.coreos.com/v1" }}
+apiVersion: monitoring.coreos.com/v1
+kind: PodMonitor
+metadata:
+  name: sonarqube-bean-metrics
+  namespace: {{ .Release.Namespace }}
+spec:
+  scrapeClass: istio-certs
+  namespaceSelector:
+    matchNames:
+    - sonarqube
+  podMetricsEndpoints:
+  - path: /
+    port: monitoring-ce
+    scheme: https
+    enableHttp2: false
+  - path: /
+    port: monitoring-web
+    scheme: https
+    enableHttp2: false
+  selector:
+    matchLabels:
+      app: sonarqube
+{{- end }}

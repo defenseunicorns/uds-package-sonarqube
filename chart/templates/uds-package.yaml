@@ -34,6 +34,19 @@ spec:
             sonar.auth.saml.user.email: email
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
   {{- end }}
+  monitor:
+    - portName: http
+      targetPort: 9000
+      selector:
+        app: sonarqube
+      kind: PodMonitor
+      path: /api/monitoring/metrics
+      authorization:
+        credentials:
+          name: sonarqube-monitoring
+          key: passcode
+          optional: false
+        type: "Bearer"
   network:
     expose:
       - service: sonarqube-sonarqube
@@ -73,6 +86,24 @@ spec:
         remoteGenerated: Anywhere
         {{- end }}
         description: "Sonarqube Postgres"
+
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8000
+        description: "Web Bean Monitor"
+
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8001
+        description: "CE Bean Monitor"
 
       # Custom rules for unanticipated scenarios
       {{- range .Values.custom }}
