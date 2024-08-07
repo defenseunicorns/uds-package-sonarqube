@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.6.0-uds.2](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.6.0-uds.2) (2024-08-07)
+
+
+### Miscellaneous
+
+* update reference in preparation for image publish ([#113](https://github.com/defenseunicorns/uds-package-sonarqube/issues/113)) ([cc24c60](https://github.com/defenseunicorns/uds-package-sonarqube/commit/cc24c606eb81cbb7782977ac23f41d057a8064cf))
+
 ## [10.6.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.0...v10.6.0-uds.1) (2024-08-06)
 
 
