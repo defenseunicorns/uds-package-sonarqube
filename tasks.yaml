@@ -51,7 +51,7 @@ tasks:
     description: Test the health of a SonarQube deployment
     actions:
       - task: create-sq-test-bundle
-      #TODO ewyles - go fast for a minute
+#todo ewyles put back
       # - task: setup:k3d-test-cluster
       # - task: deploy:test-bundle
       # - task: setup:create-doug-user
