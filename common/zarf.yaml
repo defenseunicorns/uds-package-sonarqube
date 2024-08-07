@@ -19,12 +19,12 @@ components:
         valuesFiles:
           - ../values/common-values.yaml
     images:
-      - uds-package-sonarqube/monitoring:latest
+      - ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest
     actions:
       onCreate:
         before:
           - cmd: |
-              docker buildx build --load ../src/monitoring-image -t uds-package-sonarqube/monitoring:latest --platform linux/###ZARF_PKG_ARCH###
+              docker buildx build --load ../src/monitoring-image -t ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest --platform linux/###ZARF_PKG_ARCH###
       onDeploy:
         after:
           - description: Validate SonarQube Package
