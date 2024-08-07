@@ -11,7 +11,7 @@ sonarProperties:
 
 prometheusExporter:
   enabled: true
-  image: uds-package-sonarqube/monitoring:latest
+  image: ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest
 
 monitoringPasscodeSecretName: sonarqube-monitoring
 monitoringPasscodeSecretKey: passcode
