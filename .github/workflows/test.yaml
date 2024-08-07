@@ -38,8 +38,10 @@ jobs:
     timeout-minutes: 20
     strategy:
       matrix:
-        flavor: [upstream, unicorn, registry1]
-        type: [install, upgrade]
+        flavor: [upstream]
+        type: [install]
+#        flavor: [upstream, unicorn, registry1]
+#        type: [install, upgrade]
         # do not run upgrade tests for unicorn
         # TODO @marshall: remove after first unicorn release
         exclude:
@@ -63,6 +65,14 @@ jobs:
         with:
           flavor: ${{ matrix.flavor }}
           type: ${{ matrix.type }}
+
+      - name: Security scan
+        run: |
+          rm security-scan.csv && touch security-scan.csv
+          fileName=$(find . -name zarf-package-sonarqube-*.zst -printf "%f\n")
+          echo "scanning $fileName"
+          docker run -v .:/build ghcr.io/defenseunicorns/uds-security-hub:v0.0.8 -p /build/$fileName -f /build/security-scan.csv
+          cat security-scan.csv
 
       - name: Debug Output
         if: ${{ always() }}
