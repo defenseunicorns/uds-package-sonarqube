@@ -1,7 +1,7 @@
 FROM cgr.dev/chainguard/busybox:latest
 
 # renovate: datasource=github-tags depName=prometheus/jmx_exporter versioning=semver
-ENV JMX_PROMETHEUS_PLUGIN_VERSION=0.17.2
+ENV JMX_PROMETHEUS_PLUGIN_VERSION=1.0.1
 
 USER root
 
