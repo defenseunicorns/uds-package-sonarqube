@@ -36,9 +36,6 @@ The released packages can be found in [ghcr](https://github.com/defenseunicorns/
 
 Please see the [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## Notes:
-This package is currently using registry1 chart for both flavors. This is because the upstream chart depends on 'hostname' and 'wget' to be available in the images, and the registry1 images do not include these tools.
-
 ## Development
 
 When developing this package it is ideal to utilize the json schemas for UDS Bundles, Zarf Packages and Maru Tasks. This involves configuring your IDE to provide schema validation for the respective files used by each application. For guidance on how to set up this schema validation, please refer to the [guide](https://github.com/defenseunicorns/uds-common/blob/main/docs/development-ide-configuration.md) in uds-common.
