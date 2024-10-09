@@ -1,5 +1,20 @@
 # Changelog
 
+## [10.7.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.7.0-uds.0) (2024-10-09)
+
+
+### Bug Fixes
+
+* validate package with full resource name ([#116](https://github.com/defenseunicorns/uds-package-sonarqube/issues/116)) ([1bf8f62](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1bf8f62227c69d16ec871d998c3a94367e0e5720))
+
+
+### Miscellaneous
+
+* **deps:** update sonarqube package dependencies ([#79](https://github.com/defenseunicorns/uds-package-sonarqube/issues/79)) ([c585680](https://github.com/defenseunicorns/uds-package-sonarqube/commit/c5856802cf47a0a814a0753952d7f5596318cb47))
+* remove outdated readme note about using the registry1 chart ([#115](https://github.com/defenseunicorns/uds-package-sonarqube/issues/115)) ([21bebaf](https://github.com/defenseunicorns/uds-package-sonarqube/commit/21bebaf303860102ab3889cfecc9225607b750d3))
+* update reference in preparation for image publish ([#113](https://github.com/defenseunicorns/uds-package-sonarqube/issues/113)) ([cc24c60](https://github.com/defenseunicorns/uds-package-sonarqube/commit/cc24c606eb81cbb7782977ac23f41d057a8064cf))
+* update to `uds-common` v1 ([#117](https://github.com/defenseunicorns/uds-package-sonarqube/issues/117)) ([203d747](https://github.com/defenseunicorns/uds-package-sonarqube/commit/203d7478e6e1afe2712c83bfd6153f0aaadb3d16))
+
 ## [10.6.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.0...v10.6.0-uds.1) (2024-08-06)
 
 
