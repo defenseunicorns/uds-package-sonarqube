@@ -1,6 +1,6 @@
 image:
   repository: cgr.dev/du-uds-defenseunicorns/sonarqube
-  tag: 10.6.0
+  tag: 10.7.0
 
 initContainers:
-  image: cgr.dev/du-uds-defenseunicorns/busybox-fips:1.36
+  image: cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37

@@ -1,6 +1,6 @@
 image:
   repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube
-  tag: 10.6.0-community
+  tag: 10.7.0-community
 
 initContainers:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
