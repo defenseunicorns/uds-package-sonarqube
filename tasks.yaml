@@ -3,6 +3,7 @@ includes:
   - dependencies: ./tasks/dependencies.yaml
   - test: ./tasks/test.yaml
   - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/create.yaml
+  - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/publish.yaml
   - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/lint.yaml
   - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/pull.yaml
   - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.0.0/tasks/deploy.yaml
