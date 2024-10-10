@@ -7,7 +7,6 @@ on:
 
 jobs:
   validate:
-    name: ${{ matrix.type }} ${{ matrix.flavor }}
     strategy:
       matrix:
         type: [install, upgrade]

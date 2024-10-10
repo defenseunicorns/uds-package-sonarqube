@@ -1,10 +1,11 @@
 # Changelog
 
-## [10.7.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.7.0-uds.0) (2024-10-09)
+## [10.7.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.7.0-uds.0) (2024-10-10)
 
 
 ### Bug Fixes
 
+* include the publish task ([#118](https://github.com/defenseunicorns/uds-package-sonarqube/issues/118)) ([1de472e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1de472e160ef5095c0ab12ddfdd5c19f0f515055))
 * validate package with full resource name ([#116](https://github.com/defenseunicorns/uds-package-sonarqube/issues/116)) ([1bf8f62](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1bf8f62227c69d16ec871d998c3a94367e0e5720))
 
 
