@@ -1,3 +1,6 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 edition: "community"
 
 # Name of the secret from which to load additional properties: https://community.sonarsource.com/t/additional-sonar-properties-to-load-from-a-secret/73748
