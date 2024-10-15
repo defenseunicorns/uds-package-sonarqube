@@ -22,6 +22,14 @@
       "labels": ["package-deps"],
       "commitMessageTopic": "package-deps",
       "matchDatasources": ["docker", "helm", "git-tags"]
-    }
+    },
+    {
+      "packageRules": [
+        {
+          "matchPackageNames": ["prometheus/jmx_exporter"],
+          "allowedVersions": "/^0.+$/"
+        }
+      ]
+    }    
   ]
 }
