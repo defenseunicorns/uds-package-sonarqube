@@ -1,5 +1,19 @@
 # Changelog
 
+## [10.7.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.0...v10.7.0-uds.1) (2024-10-16)
+
+
+### Bug Fixes
+
+* made for uds badge url ([#123](https://github.com/defenseunicorns/uds-package-sonarqube/issues/123)) ([7ad6629](https://github.com/defenseunicorns/uds-package-sonarqube/commit/7ad662962faa338193f28a8eb9d2e25b73ef0201))
+* monitoring jmx plugin version and renovate ([#121](https://github.com/defenseunicorns/uds-package-sonarqube/issues/121)) ([57b66f0](https://github.com/defenseunicorns/uds-package-sonarqube/commit/57b66f012d27df1d51836c4c78163db55522b359))
+
+
+### Miscellaneous
+
+* **deps:** update sonarqube support dependencies ([#105](https://github.com/defenseunicorns/uds-package-sonarqube/issues/105)) ([626a685](https://github.com/defenseunicorns/uds-package-sonarqube/commit/626a6851ac306e728707ad4a700e3b3820d9cb54))
+* fix test workflow permissions ([#122](https://github.com/defenseunicorns/uds-package-sonarqube/issues/122)) ([9c2fbff](https://github.com/defenseunicorns/uds-package-sonarqube/commit/9c2fbfff507f21d1866e8993693f8dbd5dfc3ae1))
+
 ## [10.7.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.7.0-uds.0) (2024-10-10)
 
 
