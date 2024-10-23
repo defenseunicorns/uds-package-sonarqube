@@ -9,18 +9,7 @@ This package is designed for use as part of a [UDS Software Factory](https://git
 
 ## Prerequisites
 
-SonarQube needs connection to a PostgreSQL instance either in cluster or external. It finds this connection via the `sonarqube_db_endpoint` variable declared in the zarf package and configured (as an example) at deploy time by the [uds bundle config](./bundle/uds-config.yaml).
-
-For local testing and CI, SonarQube is bundled with the [dev-postgres package](ghcr.io/defenseunicorns/packages/uds/dev-postgres).
-
-## Flavors
-
-| Flavor | Description | Example Creation |
-| ------ | ----------- | ---------------- |
-| `upstream` | Uses upstream images within the package | `zarf package create . -f upstream` |
-| `registry1` | Uses images from registry1.dso.mil within the package | `zarf package create . -f registry1` |
-
-> **_NOTE:_**  `registry1` flavor only supports the amd64 architecture
+SonarQube needs connection to a PostgreSQL instance either in cluster or external. You can learn more about configuring this (and other options) in the [configuration documentation](./docs/configuration.md).
 
 ## Releases
 
@@ -38,4 +27,4 @@ Please see the [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Development
 
-When developing this package it is ideal to utilize the json schemas for UDS Bundles, Zarf Packages and Maru Tasks. This involves configuring your IDE to provide schema validation for the respective files used by each application. For guidance on how to set up this schema validation, please refer to the [guide](https://github.com/defenseunicorns/uds-common/blob/main/docs/development-ide-configuration.md) in uds-common.
+When developing this package it is ideal to utilize the json schemas for UDS Bundles, Zarf Packages and Maru Tasks. This involves configuring your IDE to provide schema validation for the respective files used by each application. For guidance on how to set up this schema validation, please refer to the [guide](https://github.com/defenseunicorns/uds-common/blob/main/docs/uds-packages/development/development-ide-configuration.md) in uds-common.
