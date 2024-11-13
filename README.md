@@ -7,6 +7,8 @@
 
 This package is designed for use as part of a [UDS Software Factory](https://github.com/defenseunicorns/uds-software-factory) bundle deployed on [UDS Core](https://github.com/defenseunicorns/uds-core).
 
+> SonarQube is an open-source platform that continuously inspects code quality through static analysis, detecting bugs, code smells, and security vulnerabilities across 29 programming languages. It provides detailed reports on code duplication, coding standards, unit tests, code coverage, code complexity, and more.
+
 ## Prerequisites
 
 SonarQube needs connection to a PostgreSQL instance either in cluster or external. You can learn more about configuring this (and other options) in the [configuration documentation](./docs/configuration.md).
