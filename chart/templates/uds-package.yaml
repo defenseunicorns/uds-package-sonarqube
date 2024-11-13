@@ -15,10 +15,16 @@ spec:
         - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
       protocol: saml
       defaultClientScopes:
+      {{- if .Values.sso.defaultClientScopes }}
+        {{- range .Values.sso.defaultClientScopes }}
+          - "{{ . }}"
+        {{- end }}
+      {{- else }}
         - "mapper-saml-email-email"
         - "mapper-saml-username-login"
         - "mapper-saml-username-name"
-
+      {{- end }}
+      
       attributes:
         saml.client.signature: "false"
 
