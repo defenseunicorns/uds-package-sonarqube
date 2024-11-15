@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.7.0-uds.2](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.1...v10.7.0-uds.2) (2024-11-15)
+
+
+### Bug Fixes
+
+* correct defaultClientScope default value ([#137](https://github.com/defenseunicorns/uds-package-sonarqube/issues/137)) ([1c70c8e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1c70c8eab2f8c412b6134efc4b4f7f977825d1fb))
+
 ## [10.7.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.0...v10.7.0-uds.1) (2024-11-14)
 
 
