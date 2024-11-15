@@ -1,5 +1,33 @@
 # Changelog
 
+## [10.7.0-uds.1](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.0...v10.7.0-uds.1) (2024-11-14)
+
+
+### Features
+
+* add ability to change default scopes ([#134](https://github.com/defenseunicorns/uds-package-sonarqube/issues/134)) ([3062ea2](https://github.com/defenseunicorns/uds-package-sonarqube/commit/3062ea2474502773d82c8190b8256e7780df4e3d))
+
+
+### Bug Fixes
+
+* made for uds badge url ([#123](https://github.com/defenseunicorns/uds-package-sonarqube/issues/123)) ([7ad6629](https://github.com/defenseunicorns/uds-package-sonarqube/commit/7ad662962faa338193f28a8eb9d2e25b73ef0201))
+* monitoring jmx plugin version and renovate ([#121](https://github.com/defenseunicorns/uds-package-sonarqube/issues/121)) ([57b66f0](https://github.com/defenseunicorns/uds-package-sonarqube/commit/57b66f012d27df1d51836c4c78163db55522b359))
+
+
+### Miscellaneous
+
+* add pull request permissions to commitlint ([#129](https://github.com/defenseunicorns/uds-package-sonarqube/issues/129)) ([6d93ffa](https://github.com/defenseunicorns/uds-package-sonarqube/commit/6d93ffa9ab88b8f9d002fe08f5a7e1b03543df21))
+* **deps:** update package-deps to v1.13.0-uds.3-upstream ([#132](https://github.com/defenseunicorns/uds-package-sonarqube/issues/132)) ([26194ab](https://github.com/defenseunicorns/uds-package-sonarqube/commit/26194ab24e0e2d0c7321a76c3daa347a1063e1f3))
+* **deps:** update sonarqube support dependencies ([#105](https://github.com/defenseunicorns/uds-package-sonarqube/issues/105)) ([626a685](https://github.com/defenseunicorns/uds-package-sonarqube/commit/626a6851ac306e728707ad4a700e3b3820d9cb54))
+* **deps:** update sonarqube support dependencies ([#128](https://github.com/defenseunicorns/uds-package-sonarqube/issues/128)) ([44bda3f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/44bda3f65f2873f4afd0b7e150e374ac0f6f12bf))
+* **deps:** update support-deps to v1.1.1 ([#124](https://github.com/defenseunicorns/uds-package-sonarqube/issues/124)) ([437eaa3](https://github.com/defenseunicorns/uds-package-sonarqube/commit/437eaa3139d470d4c5b7c91f35377bdb9c4cfd1f))
+* **deps:** update support-deps to v1.1.2 ([#126](https://github.com/defenseunicorns/uds-package-sonarqube/issues/126)) ([7af7195](https://github.com/defenseunicorns/uds-package-sonarqube/commit/7af719528ef461059c4c4eefc5560e12a25451fd))
+* fix test workflow permissions ([#122](https://github.com/defenseunicorns/uds-package-sonarqube/issues/122)) ([9c2fbff](https://github.com/defenseunicorns/uds-package-sonarqube/commit/9c2fbfff507f21d1866e8993693f8dbd5dfc3ae1))
+* set fail-fast to true on test matrix ([#131](https://github.com/defenseunicorns/uds-package-sonarqube/issues/131)) ([f8f12cb](https://github.com/defenseunicorns/uds-package-sonarqube/commit/f8f12cbfb520527324caae67b33d5041af50e520))
+* streamline README and fix links ([#127](https://github.com/defenseunicorns/uds-package-sonarqube/issues/127)) ([5c97910](https://github.com/defenseunicorns/uds-package-sonarqube/commit/5c97910234e6f7b43b858bc23045fd189dcc80f0))
+* update base pattern match in CODEOWNERS file ([#136](https://github.com/defenseunicorns/uds-package-sonarqube/issues/136)) ([a194c5b](https://github.com/defenseunicorns/uds-package-sonarqube/commit/a194c5b76b31c6c261ed31932112ad66261bc0fd))
+* update README.md ([#135](https://github.com/defenseunicorns/uds-package-sonarqube/issues/135)) ([b2d4e3f](https://github.com/defenseunicorns/uds-package-sonarqube/commit/b2d4e3f2b732cf0e7ecdc6f998c82870cb0ad030))
+
 ## [10.7.0-uds.0](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.6.0-uds.1...v10.7.0-uds.0) (2024-10-10)
 
 
