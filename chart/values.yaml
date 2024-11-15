@@ -8,7 +8,7 @@ sso:
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
   # This will replace the current list of default scopes.
-  defaultClientScopes: {}
+  defaultClientScopes: []
 postgres:
   password: ""
 
