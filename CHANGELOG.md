@@ -1,5 +1,17 @@
 # Changelog
 
+## [10.7.0-uds.3](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.2...v10.7.0-uds.3) (2024-11-22)
+
+
+### Features
+
+* add ability to configure requiredGroups ([#140](https://github.com/defenseunicorns/uds-package-sonarqube/issues/140)) ([1f24569](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1f24569a5a2bb1bb9db2b5a88e4f8c340dca5b73))
+
+
+### Miscellaneous
+
+* **deps:** update support-deps to v1.4.0 ([#139](https://github.com/defenseunicorns/uds-package-sonarqube/issues/139)) ([3e8b8dc](https://github.com/defenseunicorns/uds-package-sonarqube/commit/3e8b8dc7a17dfa5969cb834f04b11f422fc9e9cd))
+
 ## [10.7.0-uds.2](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.1...v10.7.0-uds.2) (2024-11-15)
 
 
