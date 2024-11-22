@@ -24,6 +24,13 @@ spec:
         - "mapper-saml-username-login"
         - "mapper-saml-username-name"
       {{- end }}
+      groups:
+        anyOf:
+        {{- if .Values.sso.requiredGroups }}
+          {{- range .Values.sso.requiredGroups }}
+            - "{{ . }}"
+          {{- end }}
+        {{- end }}
       
       attributes:
         saml.client.signature: "false"
