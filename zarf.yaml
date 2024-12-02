@@ -54,7 +54,7 @@ components:
           - values/upstream-values.yaml
     images:
       - "sonarqube:10.7.0-community"
-      - "curlimages/curl:8.10.1"
+      - "curlimages/curl:8.11.0"
       - "busybox:1.37"
 
   - name: sonarqube
