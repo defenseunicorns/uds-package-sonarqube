@@ -54,7 +54,6 @@ components:
           - values/upstream-values.yaml
     images:
       - "sonarqube:10.7.0-community"
-      - "curlimages/curl:8.11.0"
       - "busybox:1.37"
 
   - name: sonarqube
@@ -70,5 +69,4 @@ components:
           - values/unicorn-values.yaml
     images:
       - "cgr.dev/du-uds-defenseunicorns/sonarqube:10.7.0"
-      - "cgr.dev/du-uds-defenseunicorns/curl-fips:8-dev"
       - "cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37"
