@@ -13,6 +13,9 @@ monitoring:
 initSysctl:
   enabled: false
 
+initFs:
+  enabled: false
+
 elasticsearch:
   configureNode: false
 
