@@ -29,9 +29,6 @@ initSysctl:
 initFs:
   enabled: false
 
-elasticsearch:
-  configureNode: false
-
 jdbcOverwrite:
   enable: true # DEPRECATED: use `jdbcOverwrite.enabled` in v10.7.0
   enabled: true
