@@ -4,6 +4,7 @@
 *.tar.zst
 ~/
 .DS_Store
+.vscode/
 defense-unicorns-distro/preflight.sh
 .terraform
 tmp
@@ -26,3 +27,7 @@ test/tf/public-ec2-instance/.terraform
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
+
+# Tests
+node_modules/
+.playwright/

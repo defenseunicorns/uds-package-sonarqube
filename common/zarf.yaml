@@ -1,3 +1,6 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 # yaml-language-server: $schema=https://raw.githubusercontent.com/defenseunicorns/zarf/main/zarf.schema.json
 kind: ZarfPackageConfig
 metadata:
@@ -14,9 +17,28 @@ components:
         localPath: ../chart
       - name: sonarqube
         namespace: sonarqube
-        # see note in README.md about use of registry1 chart for both flavors
-        url: https://repo1.dso.mil/big-bang/product/packages/sonarqube.git
-        gitPath: chart
-        version: "8.0.3-bb.0"
+        url: https://SonarSource.github.io/helm-chart-sonarqube
+        version: 10.7.0+3598
         valuesFiles:
           - ../values/common-values.yaml
+    images:
+      - ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest
+    actions:
+      onCreate:
+        before:
+          - cmd: |
+              docker buildx build --load ../src/monitoring-image -t ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest --platform linux/###ZARF_PKG_ARCH###
+      onDeploy:
+        after:
+          - description: Validate SonarQube Package
+            maxTotalSeconds: 300
+            wait:
+              cluster:
+                kind: packages.uds.dev
+                name: sonarqube
+                namespace: sonarqube
+                condition: "'{.status.phase}'=Ready"
+          - description: Perform DB migrations if necessary
+            cmd: |
+              STATUS=$(curl -XPOST -s "https://sonarqube.$ZARF_VAR_DOMAIN/api/system/migrate_db" | ./zarf tools yq '.state')
+              echo "SonarQube migration state: ${STATUS}"

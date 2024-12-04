@@ -1,5 +1,5 @@
-OpenShift:
-  enabled: false
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
 
 edition: "community"
 
@@ -7,8 +7,21 @@ edition: "community"
 # This secret will be created by the uds operator based on the sso spec defined in chart/templates/uds-package.yaml
 sonarSecretProperties: sonarqube-sso
 
-monitoring:
+sonarProperties:
+  # Update Center requires an internet connection to request https://downloads.sonarsource.com/?prefix=sonarqube/update
+  # We disable it by default.
+  sonar.updatecenter.activate: false
+
+prometheusExporter:
   enabled: true
+  image: ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest
+
+monitoringPasscodeSecretName: sonarqube-monitoring
+monitoringPasscodeSecretKey: passcode
+
+prometheusMonitoring:
+  podMonitor:
+    enabled: false
 
 initSysctl:
   enabled: false
@@ -20,7 +33,8 @@ elasticsearch:
   configureNode: false
 
 jdbcOverwrite:
-  enable: true
+  enable: true # DEPRECATED: use `jdbcOverwrite.enabled` in v10.7.0
+  enabled: true
   jdbcUrl: jdbc:postgresql://###ZARF_VAR_SONARQUBE_DB_ENDPOINT###:5432/###ZARF_VAR_SONARQUBE_DB_NAME###
   jdbcUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
   jdbcPassword: null
@@ -29,10 +43,3 @@ jdbcOverwrite:
 
 postgresql:
   enabled: false
-  postgresqlServer: ###ZARF_VAR_SONARQUBE_DB_ENDPOINT###
-  existingSecret: "sonarqube-postgres"
-  existingSecretPasswordKey: "password"
-  postgresqlUsername: ###ZARF_VAR_SONARQUBE_DB_USERNAME###
-  postgresqlDatabase: ###ZARF_VAR_SONARQUBE_DB_NAME###
-  service:
-    port: 5432

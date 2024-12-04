@@ -1,20 +1,25 @@
-name: CI Docs Shim
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
+name: CI Doc Shim
 
 on:
   pull_request:
     branches: [main]
     types: [milestoned, opened, synchronize]
 
+# Permissions for the GITHUB_TOKEN used by the workflow.
+permissions:
+  contents: read # Allows reading the content of the repository.
+
 jobs:
-  run-test:
-    name: ${{ matrix.type }} ${{ matrix.flavor }}
-    runs-on: "ubuntu-latest"
-    timeout-minutes: 20
+  validate:
     strategy:
       matrix:
-        flavor: [upstream, registry1]
         type: [install, upgrade]
-    steps:
-      - name: Shim for ${{ matrix.type }} ${{ matrix.flavor }}
-        run: |
-          echo "Documentation-only change detected; marking ${{ matrix.type }} ${{ matrix.flavor }} as successful."
+        flavor: [upstream, registry1, unicorn]
+    uses: defenseunicorns/uds-common/.github/workflows/callable-ci-docs-shim.yaml@5b91b1e0809cc34b397cf3914cda81e32ccb85b2 # v1.4.0
+    with:
+      flavor: ${{ matrix.flavor }}
+      type: ${{ matrix.type }}
+    secrets: inherit # Inherits all secrets from the parent workflow.

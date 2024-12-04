@@ -1,64 +1,67 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 name: Test
 
 on:
+  # This workflow is triggered on pull requests to the main branch.
   pull_request:
     branches: [main]
-    types: [milestoned, opened, synchronize]
+    # milestoned is added here as a workaround for release-please not triggering PR workflows (PRs should be added to a milestone to trigger the workflow).
+    types: [milestoned, opened, reopened, synchronize]
     paths-ignore:
       - "**.md"
       - "**.jpg"
       - "**.png"
       - "**.gif"
       - "**.svg"
-      - "adr/**"
-      - "docs/**"
-      - ".gitignore"
-      - "renovate.json"
-      - ".release-please-config.json"
-      - "release-please-config.json"
-      - "oscal-component.yaml"
-      - "CODEOWNERS"
-      - "LICENSE"
-      - "CONTRIBUTING.md"
-      - "SECURITY.md"
+      - adr/**
+      - docs/**
+      - .gitignore
+      - renovate.json
+      - .release-please-config.json
+      - release-please-config.json
+      - CODEOWNERS
+      - LICENSE
+      - CONTRIBUTING.md
+      - SECURITY.md
+
+# Permissions for the GITHUB_TOKEN used by the workflow.
+permissions:
+  contents: read # Allows reading the content of the repository.
+  packages: read # Allows reading the content of the repository's packages.
+  id-token: write
 
 # Abort prior jobs in the same workflow / PR
 concurrency:
   group: test-${{ github.ref }}
   cancel-in-progress: true
 
-permissions:
-  contents: read
-
 jobs:
-  run-test:
-    name: ${{ matrix.type }} ${{ matrix.flavor }}
+  check-flavor:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    strategy:
-      matrix:
-        flavor: [upstream, registry1]
-        type: [install, upgrade]
-
     steps:
       - name: Checkout repository
-        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - name: Environment setup
-        uses: defenseunicorns/uds-common/.github/actions/setup@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
-        with:
-          registry1Username: ${{ secrets.IRON_BANK_ROBOT_USERNAME }}
-          registry1Password: ${{ secrets.IRON_BANK_ROBOT_PASSWORD }}
-          ghToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: test-flavor
+        uses: defenseunicorns/uds-common/.github/actions/test-flavor@5b91b1e0809cc34b397cf3914cda81e32ccb85b2 # v1.4.0
+        id: test-flavor
+    outputs:
+      upgrade-flavors: ${{ steps.test-flavor.outputs.upgrade-flavors }}
 
-      - name: Test
-        uses: defenseunicorns/uds-common/.github/actions/test@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
-        with:
-          flavor: ${{ matrix.flavor }}
-          type: ${{ matrix.type }}
-
-      - name: Save logs
-        if: always()
-        uses: defenseunicorns/uds-common/.github/actions/save-logs@b2e8b25930c953ef893e7c787fe350f0d8679ee2 # v0.4.2
-        with:
-          suffix: ${{ matrix.type }}-${{ matrix.flavor }}-${{ github.run_id }}-${{ github.run_attempt }}
+  validate:
+    needs: check-flavor
+    strategy:
+      fail-fast: true
+      matrix:
+        type: [install, upgrade]
+        flavor: [upstream, unicorn, registry1]
+    uses: defenseunicorns/uds-common/.github/workflows/callable-test.yaml@5b91b1e0809cc34b397cf3914cda81e32ccb85b2 # v1.4.0
+    with:
+      upgrade-flavors: ${{ needs.check-flavor.outputs.upgrade-flavors }}
+      flavor: ${{ matrix.flavor }}
+      type: ${{ matrix.type }}
+      reports-path: "tests/.playwright/reports/"
+      runsOn: uds-swf-ubuntu-big-boy-8-core
+    secrets: inherit # Inherits all secrets from the parent workflow.

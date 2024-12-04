@@ -1,8 +1,17 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 tasks:
+  - name: all
+    actions:
+      - task: health-check
+      - task: ingress
+      - task: ui
+
   - name: health-check
     actions:
       # StatefulSets don't show conditions themselves so we look for an underlying Pod
-      - description: Sonarqube StatefulSet Health Check
+      - description: SonarQube StatefulSet Health Check
         wait:
           cluster:
             kind: Pod
@@ -12,9 +21,23 @@ tasks:
 
   - name: ingress
     actions:
-      - description: Sonarqube UI Health Check
-        wait:
-          network:
-            protocol: https
-            address: sonarqube.uds.dev
-            code: 200
+      - description: SonarQube UI Status Check
+        maxRetries: 30
+        cmd: |
+          STATUS=$(curl -s 'https://sonarqube.uds.dev/api/system/status' | ./uds zarf tools yq '.status')
+          echo "SonarQube system status: ${STATUS}"
+          if [ "$STATUS" != "UP" ]; then
+            sleep 10
+            exit 1
+          fi
+
+  - name: ui
+    description: SonarQube UI Checks
+    actions:
+      - cmd: |
+          docker run --rm --ipc=host --net=host --mount type=bind,source="$(pwd)",target=/app mcr.microsoft.com/playwright:v1.43.1-jammy sh -c " \
+            cd app && \
+            npm ci && \
+            npx playwright test \
+            "
+        dir: tests

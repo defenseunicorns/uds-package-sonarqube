@@ -1,9 +1,23 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 image:
-  repository: registry1.dso.mil/ironbank/big-bang/sonarqube-9
-  tag: 9.9.3-community
+  repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube
+  tag: 10.7.0-community
 
 initContainers:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
 
-prometheusExporter:
-  image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
+# wget used by default probes not available in registry1 images
+livenessProbe:
+  exec: null
+  httpGet:
+    path: /
+    scheme: HTTP
+    port: 9000
+readinessProbe:
+  exec: null
+  httpGet:
+    path: /api/system/status
+    scheme: HTTP
+    port: 9000

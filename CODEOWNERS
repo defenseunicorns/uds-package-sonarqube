@@ -1,6 +1,6 @@
 # This repository is owned by the Software Factory Team
-/* @defenseunicorns/swf
+* @defenseunicorns/swf
 
 # Additional privileged files
-/CODEOWNERS @jeff-mccoy @austenbryan
-/LICENSE @jeff-mccoy @austenbryan
+/CODEOWNERS @jeff-mccoy @daveworth
+/LICENS* @jeff-mccoy @austenbryan

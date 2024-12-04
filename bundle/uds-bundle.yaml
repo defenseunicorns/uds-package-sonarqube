@@ -1,22 +1,53 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 kind: UDSBundle
 metadata:
   name: sonarqube-test
   description: A UDS bundle for deploying Sonarqube and it's dependencies on a development cluster
   # x-release-please-start-version
-  version: 9.9.2-uds.0
+  version: 10.7.0-uds.3
   # x-release-please-end
 
 packages:
-  - name: dev-postgres
-    repository: ghcr.io/defenseunicorns/packages/uds/dev-postgres
-    ref: 0.0.1
-
-  - name: dev-secrets
+  - name: dev-namespace
     path: ../
     ref: 0.1.0
+
+  - name: postgres-operator
+    repository: ghcr.io/defenseunicorns/packages/uds/postgres-operator
+    ref: 1.13.0-uds.4-upstream
+    overrides:
+      postgres-operator:
+        uds-postgres-config:
+          values:
+            - path: postgresql
+              value:
+                enabled: true  # Set to false to not create the PostgreSQL resource
+                teamId: "uds"
+                volume:
+                  size: "10Gi"
+                numberOfInstances: 2
+                users:
+                  sonarqube.sonarqube: []  # database owner
+                databases:
+                  sonarqubedb: sonarqube.sonarqube
+                version: "14"
+                ingress:
+                  - remoteNamespace: sonarqube
 
   - name: sonarqube
     path: ../
     # x-release-please-start-version
-    ref: 9.9.2-uds.0
+    ref: 10.7.0-uds.3
     # x-release-please-end
+    overrides:
+      sonarqube:
+        sonarqube:
+          values:
+            - path: "jdbcOverwrite.jdbcSecretName"
+              value: "sonarqube.sonarqube.pg-cluster.credentials.postgresql.acid.zalan.do"
+            - path: "jdbcOverwrite.jdbcUsername"
+              value: "sonarqube.sonarqube"
+            - path: "jdbcOverwrite.jdbcUrl"
+              value: "jdbc:postgresql://pg-cluster.postgres.svc.cluster.local:5432/sonarqubedb"

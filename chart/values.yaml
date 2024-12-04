@@ -1,6 +1,36 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 domain: "###ZARF_VAR_DOMAIN###"
 sso:
   enabled: true
   secretName: sonarqube-sso
   saml:
     providerName: Keycloak # This is displayed on the SonarQube landing screen ("Log in with <providerName>")
+  # This will replace the current list of default scopes.
+  defaultClientScopes: []
+  requiredGroups: []
+postgres:
+  password: ""
+
+  internal: true
+  selector:
+    cluster-name: pg-cluster
+  namespace: postgres
+  port: 5432
+custom: []
+#    # Notice no `remoteGenerated` field here on custom internal rule
+#   - direction: Ingress
+#     selector:
+#       app: jenkins
+#     remoteNamespace: jenkins
+#     remoteSelector:
+#       app: jenkins
+#     port: 8180
+#     description: "Ingress from Jenkins"
+#   # No `remoteNamespace`, `remoteSelector`, or `port` fields on rule to `remoteGenerated`
+#   - direction: Egress
+#     selector:
+#       app: webservice
+#     remoteGenerated: Anywhere
+#     description: "Egress from SonarQube"

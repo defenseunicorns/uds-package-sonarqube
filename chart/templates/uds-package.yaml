@@ -1,3 +1,6 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
 apiVersion: uds.dev/v1alpha1
 kind: Package
 metadata:
@@ -12,10 +15,23 @@ spec:
         - "https://sonarqube.{{ .Values.domain }}/oauth2/callback/saml"
       protocol: saml
       defaultClientScopes:
+      {{- if .Values.sso.defaultClientScopes }}
+        {{- range .Values.sso.defaultClientScopes }}
+          - "{{ . }}"
+        {{- end }}
+      {{- else }}
         - "mapper-saml-email-email"
         - "mapper-saml-username-login"
         - "mapper-saml-username-name"
-
+      {{- end }}
+      groups:
+        anyOf:
+        {{- if .Values.sso.requiredGroups }}
+          {{- range .Values.sso.requiredGroups }}
+            - "{{ . }}"
+          {{- end }}
+        {{- end }}
+      
       attributes:
         saml.client.signature: "false"
 
@@ -34,6 +50,19 @@ spec:
             sonar.auth.saml.user.email: email
             sonar.auth.saml.certificate.secured: clientField(samlIdpCertificate)
   {{- end }}
+  monitor:
+    - portName: http
+      targetPort: 9000
+      selector:
+        app: sonarqube
+      kind: PodMonitor
+      path: /api/monitoring/metrics
+      authorization:
+        credentials:
+          name: sonarqube-monitoring
+          key: passcode
+          optional: false
+        type: "Bearer"
   network:
     expose:
       - service: sonarqube-sonarqube
@@ -43,8 +72,67 @@ spec:
         host: sonarqube
         port: 9000
     allow:
-      # Todo: wide open for hitting in-cluster or external postgres
       - direction: Egress
-        podLabels:
+        remoteNamespace: keycloak
+        remoteSelector:
+          app.kubernetes.io/name: keycloak
+        selector:
           app: sonarqube
+        port: 8080
+        description: "SSO Internal"
+
+      - direction: Egress
+        remoteNamespace: istio-tenant-gateway
+        remoteSelector:
+          app: tenant-ingressgateway
+        selector:
+          app: sonarqube
+        port: 443
+        description: "SSO External"
+
+      - direction: Egress
+        selector:
+          app: sonarqube
+        {{- if .Values.postgres.internal }}
+        remoteNamespace: {{ .Values.postgres.namespace | quote }}
+        remoteSelector:
+          {{ .Values.postgres.selector | toYaml | nindent 10 }}
+        port: {{ .Values.postgres.port }}
+        {{- else }}
         remoteGenerated: Anywhere
+        {{- end }}
+        description: "Sonarqube Postgres"
+
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8000
+        description: "Web Bean Monitor"
+
+      - direction: Ingress
+        remoteNamespace: monitoring
+        remoteSelector:
+          app: prometheus
+        selector:
+          app: sonarqube
+        port: 8001
+        description: "CE Bean Monitor"
+
+      # Custom rules for unanticipated scenarios
+      {{- range .Values.custom }}
+      - direction: {{ .direction }}
+        selector:
+          {{ .selector | toYaml | nindent 10 }}
+        {{- if not .remoteGenerated }}
+        remoteNamespace: {{ .remoteNamespace }}
+        remoteSelector:
+          {{ .remoteSelector | toYaml | nindent 10 }}
+        port: {{ .port }}
+        {{- else }}
+        remoteGenerated: {{ .remoteGenerated }}
+        {{- end }}
+        description: {{ .description }}
+      {{- end }}
