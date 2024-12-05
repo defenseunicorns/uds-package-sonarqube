@@ -81,5 +81,5 @@ tasks:
         task: publish:package
         with:
           # x-release-please-start-version
-          version: "10.7.0-uds.3"
+          version: "10.7.0-uds.4"
           # x-release-please-end
