@@ -1,5 +1,18 @@
 # Changelog
 
+## [10.7.0-uds.4](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.3...v10.7.0-uds.4) (2024-12-05)
+
+
+### Bug Fixes
+
+* set initFS.enabled to false ([#144](https://github.com/defenseunicorns/uds-package-sonarqube/issues/144)) ([423ceb4](https://github.com/defenseunicorns/uds-package-sonarqube/commit/423ceb4ca9f6654d610340f825593b6d70291da9))
+
+
+### Miscellaneous
+
+* **deps:** update sonarqube package dependencies ([#133](https://github.com/defenseunicorns/uds-package-sonarqube/issues/133)) ([1895cc7](https://github.com/defenseunicorns/uds-package-sonarqube/commit/1895cc7c8da9a6a4163c9df0469a4b4b95a69133))
+* **deps:** update sonarqube package dependencies ([#143](https://github.com/defenseunicorns/uds-package-sonarqube/issues/143)) ([f368f9e](https://github.com/defenseunicorns/uds-package-sonarqube/commit/f368f9e556fcee9307225df57db05886f33bf447))
+
 ## [10.7.0-uds.3](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.2...v10.7.0-uds.3) (2024-11-22)
 
 
