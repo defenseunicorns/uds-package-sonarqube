@@ -2,7 +2,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
 
 includes:
-  - dependencies: ./tasks/dependencies.yaml
   - test: ./tasks/test.yaml
   - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/create.yaml
   - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/publish.yaml
@@ -59,8 +58,6 @@ tasks:
     description: Test an upgrade from the latest released package to the current branch
     actions:
       - task: upgrade:create-latest-tag-bundle
-        with:
-          dep_commands: ./uds run dependencies:create
       - task: setup:k3d-test-cluster
       - task: deploy:test-bundle
       - task: setup:create-doug-user

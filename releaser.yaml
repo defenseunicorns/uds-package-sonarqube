@@ -1,0 +1,13 @@
+# Copyright 2024 Defense Unicorns
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
+
+flavors:
+  - name: upstream
+    # renovate: datasource=docker depName=sonarqube extractVersion=^(?<version>\d+\.\d+\.\d+)(-community)?$
+    version: 10.7.0-uds.4
+  - name: registry1
+    # renovate: datasource=docker depName=registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube extractVersion=^(?<version>\d+\.\d+\.\d+)(-community)?$
+    version: 10.7.0-uds.4
+  - name: unicorn
+    # renovate: datasource=docker depName=cgr.dev/du-uds-defenseunicorns/sonarqube
+    version: 10.7.0-uds.4
