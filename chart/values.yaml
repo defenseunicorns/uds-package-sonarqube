@@ -18,7 +18,7 @@ postgres:
     cluster-name: pg-cluster
   namespace: postgres
   port: 5432
-custom: []
+additionalNetworkAllow: []
 #    # Notice no `remoteGenerated` field here on custom internal rule
 #   - direction: Ingress
 #     selector:

@@ -7,7 +7,7 @@ SonarQube in this package is configured through the upstream [SonarQube chart](h
 Network policies are controlled via the `uds-sonarqube-config` chart in accordance with the [common patterns for networking within UDS Software Factory](https://github.com/defenseunicorns/uds-software-factory/blob/main/docs/networking.md).  SonarQube interacts with Postgresql externally and supports the following keys:
 
 - `postgres`: sets network policies for accessing a Postgres database from the SonarQube pod
-- `custom`: sets custom network policies for the SonarQube namespace - this allows for custom integrations with other services
+- `additionalNetworkAllow`: sets custom network policies for the SonarQube namespace - this allows for custom integrations with other services
 
 ## Database
 
