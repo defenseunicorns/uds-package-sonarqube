@@ -1,5 +1,12 @@
 # Changelog
 
+## [10.7.0-uds.5](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.4...v10.7.0-uds.5) (2024-12-10)
+
+
+### Miscellaneous
+
+* update custom network properties key ([#147](https://github.com/defenseunicorns/uds-package-sonarqube/issues/147)) ([ddff85a](https://github.com/defenseunicorns/uds-package-sonarqube/commit/ddff85a9c22122e704a29245855cc50c84f86029))
+
 ## [10.7.0-uds.4](https://github.com/defenseunicorns/uds-package-sonarqube/compare/v10.7.0-uds.3...v10.7.0-uds.4) (2024-12-05)
 
 
