@@ -6,9 +6,7 @@ kind: ZarfPackageConfig
 metadata:
   name: sonarqube
   description: "UDS Sonarqube package"
-  # x-release-please-start-version
-  version: "10.7.0-uds.4"
-  # x-release-please-end
+  version: "dev"
 
 variables:
   - name: SONARQUBE_DEPENDS_ON
