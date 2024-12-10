@@ -3,16 +3,16 @@
 
 includes:
   - test: ./tasks/test.yaml
-  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/create.yaml
-  - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/publish.yaml
-  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/lint.yaml
-  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/pull.yaml
-  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/deploy.yaml
-  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/setup.yaml
-  - actions: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/actions.yaml
-  - badge: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/badge.yaml
-  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/upgrade.yaml
-  - compliance: https://raw.githubusercontent.com/defenseunicorns/uds-common/150e355b13ecd121bc7fa8ae6d7a6bb7a3c286cb/tasks/compliance.yaml
+  - create: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/create.yaml
+  - publish: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/publish.yaml
+  - lint: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/lint.yaml
+  - pull: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/pull.yaml
+  - deploy: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/deploy.yaml
+  - setup: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/setup.yaml
+  - actions: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/actions.yaml
+  - badge: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/badge.yaml
+  - upgrade: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/upgrade.yaml
+  - compliance: https://raw.githubusercontent.com/defenseunicorns/uds-common/v1.5.1/tasks/compliance.yaml
 
 tasks:
   - name: default
