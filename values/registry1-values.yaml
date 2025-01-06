@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
 
 image:
-  repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube
-  tag: 10.7.0-community
+  repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build
+  tag: 24.12.0.100206-community
 
 initContainers:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
