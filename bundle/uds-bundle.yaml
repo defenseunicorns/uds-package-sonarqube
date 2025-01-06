@@ -5,9 +5,7 @@ kind: UDSBundle
 metadata:
   name: sonarqube-test
   description: A UDS bundle for deploying Sonarqube and it's dependencies on a development cluster
-  # x-release-please-start-version
-  version: 10.7.0-uds.4
-  # x-release-please-end
+  version: dev
 
 packages:
   - name: postgres-operator
@@ -34,9 +32,7 @@ packages:
 
   - name: sonarqube
     path: ../
-    # x-release-please-start-version
-    ref: 10.7.0-uds.4
-    # x-release-please-end
+    ref: dev
     overrides:
       sonarqube:
         sonarqube:
