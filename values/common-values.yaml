@@ -12,6 +12,9 @@ sonarProperties:
 
 deploymentType: Deployment
 
+community:
+  enabled: true
+
 prometheusExporter:
   enabled: true
   image: ghcr.io/defenseunicorns/uds-package-sonarqube/monitoring:latest
