@@ -36,7 +36,7 @@ components:
           - values/registry1-values.yaml
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
-      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:24.12.0.100206-community"
+      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:25.1.0.102122-community"
 
   # Note: upstream flavor is experimental
   - name: sonarqube
@@ -51,7 +51,7 @@ components:
         valuesFiles:
           - values/upstream-values.yaml
     images:
-      - "sonarqube:24.12.0.100206-community"
+      - "sonarqube:25.1.0.102122-community"
       - "busybox:1.37"
 
   - name: sonarqube
@@ -66,5 +66,5 @@ components:
         valuesFiles:
           - values/unicorn-values.yaml
     images:
-      - "cgr.dev/du-uds-defenseunicorns/sonarqube:24.12.0.100206"
+      - "cgr.dev/du-uds-defenseunicorns/sonarqube:25.1.0.102122"
       - "cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37"
