@@ -66,5 +66,5 @@ components:
         valuesFiles:
           - values/unicorn-values.yaml
     images:
-      - "cgr.dev/du-uds-defenseunicorns/sonarqube:25.1.0.102122"
+      - "cgr.dev/du-uds-defenseunicorns/sonarqube:25.2.0.102705"
       - "cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37"
