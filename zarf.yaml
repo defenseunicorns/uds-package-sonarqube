@@ -7,6 +7,12 @@ metadata:
   name: sonarqube
   description: "UDS Sonarqube package"
   version: "dev"
+  annotations:
+    title: SonarQube
+    description: SonarQube is a comprehensive code quality and security tool that helps developers deliver and maintain high-quality, secure code. It performs static code analysis to detect bugs, vulnerabilities, and code smells across multiple programming languages, providing actionable insights to improve code health. By integrating seamlessly into development workflows, SonarQube enables teams to catch and fix issues early, reducing technical debt and enhancing overall software quality. The platform integrates with popular DevOps tools like GitHub, GitLab, Azure Pipelines, and Jenkins, allowing for automated code scans and quality checks throughout the development process.
+    categories: Software Dev,Security,IT Management,Productivity
+    keywords: Code Quality,Security Tool,Static Code Analysis,Bug Detection,Vulnerability Detection,Code Smells,Technical Debt Reduction,DevOps Integration,GitHub Integration,GitLab Integration,Azure Pipelines
+    tagline: **Clean Code, Under Your Control**
 
 variables:
   - name: SONARQUBE_DEPENDS_ON
