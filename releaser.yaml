@@ -4,10 +4,10 @@
 flavors:
   - name: upstream
     # renovate-uds: datasource=docker depName=sonarqube versioning=docker extractVersion=^(?<version>\d+\.\d+\.\d+\.\d+)(-community)?$
-    version: 25.1.0.102122-uds.0
+    version: 25.2.0.102705-uds.0
   - name: registry1
     # renovate-uds: datasource=docker depName=registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build versioning=docker extractVersion=^(?<version>\d+\.\d+\.\d+\.\d+)(-community)?$
-    version: 25.1.0.102122-uds.0
+    version: 25.2.0.102705-uds.0
   - name: unicorn
     # renovate-uds: datasource=docker depName=cgr.dev/du-uds-defenseunicorns/sonarqube versioning=docker
-    version: 25.1.0.102122-uds.0
+    version: 25.2.0.102705-uds.0
