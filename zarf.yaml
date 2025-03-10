@@ -5,9 +5,14 @@
 kind: ZarfPackageConfig
 metadata:
   name: sonarqube
-  description: "UDS Sonarqube package"
+  description: "SonarQube is a comprehensive code quality and security tool that helps developers deliver and maintain high-quality, secure code. It performs static code analysis to detect bugs, vulnerabilities, and code smells across multiple programming languages, providing actionable insights to improve code health. By integrating seamlessly into development workflows, SonarQube enables teams to catch and fix issues early, reducing technical debt and enhancing overall software quality. The platform integrates with popular DevOps tools like GitHub, GitLab, Azure Pipelines, and Jenkins, allowing for automated code scans and quality checks throughout the development process."
   version: "dev"
-
+  annotations:
+    dev.uds.title: SonarQube
+    dev.uds.tagline: '**Clean Code, Under Your Control**'
+    dev.uds.categories: Software Dev, Security, IT Management, Productivity
+    dev.uds.keywords: Code Quality, Security Tool, Static Code Analysis, Bug Detection, Vulnerability Detection, Code Smells, Technical Debt Reduction, DevOps Integration, GitHub Integration, GitLab Integration, Azure Pipelines
+    dev.uds.icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48ZyBjbGlwLXBhdGg9InVybCgjQSkiPjxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjAxIiBkPSJNMTIsMTJoNTZ2NTZIMTJ6Ii8+PHBhdGggZD0iTTYwLjU1Nyw2OGgtMy4wNjhjMC0yNi4wNTgtMjAuNDA5LTQ3LjI1Ni00NS40ODktNDcuMjU2di0zLjIzMmMyNi43NzIsMCA0OC41NTcsMjIuNjQyIDQ4LjU1Nyw1MC40ODl6bTIuMTIzLTE3LjM4MmMtMy42ODYtMTYuMzQ0LTE2LjI1Ni0yOS45ODUtMzIuMDIyLTM0Ljc1OWwuNzA2LTIuNTkzYzE2LjY0MSw1LjAzOCAyOS45MSwxOS40NDcgMzMuODAxLDM2LjczMWwtMi40ODUuNjIxem0zLjQ1OS0xNS4zNDNjLTMuNzk3LTguNzI1LTEwLjI3Ny0xNi4zMzgtMTguMjI3LTIxLjQzMkw0OC45OCwxMmM4LjMsNS4zMjEgMTUuMDQ4LDEzLjI2IDE5LjAyMSwyMi4zNzhsLTEuODYxLjg5N3oiIGZpbGw9IiM0OTljZDIiLz48L2c+PGRlZnM+PGNsaXBQYXRoPjxwYXRoIGZpbGw9IiNmZmYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyLDEyKSIgZD0iTTAsMGg1NnY1NkgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==
 variables:
   - name: SONARQUBE_DEPENDS_ON
     default: "[]"
@@ -21,7 +26,6 @@ variables:
     default: "sonarqube"
   - name: SONARQUBE_DB_ENDPOINT
     default: "postgres"
-
 components:
   - name: sonarqube
     required: true
@@ -37,7 +41,6 @@ components:
     images:
       - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
       - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:25.2.0.102705-community"
-
   # Note: upstream flavor is experimental
   - name: sonarqube
     required: true
@@ -53,7 +56,6 @@ components:
     images:
       - "sonarqube:25.2.0.102705-community"
       - "busybox:1.37"
-
   - name: sonarqube
     required: true
     description: "Deploy sonarqube"
