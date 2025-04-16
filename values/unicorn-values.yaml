@@ -3,7 +3,7 @@
 
 image:
   repository: cgr.dev/du-uds-defenseunicorns/sonarqube
-  tag: 25.3.0.104237
+  tag: 25.4.0.105899
 
 initContainers:
   image: cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37
