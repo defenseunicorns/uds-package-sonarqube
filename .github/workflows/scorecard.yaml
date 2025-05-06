@@ -17,6 +17,7 @@ jobs:
   validate:
     permissions:
       actions: read
+      models: read
       attestations: read
       checks: read
       contents: read
