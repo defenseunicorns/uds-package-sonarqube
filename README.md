@@ -13,6 +13,9 @@ This package is designed for use as part of a [UDS Software Factory](https://git
 
 SonarQube needs connection to a PostgreSQL instance either in cluster or external. You can learn more about configuring this (and other options) in the [configuration documentation](./docs/configuration.md).
 
+> [!IMPORTANT]
+> **NOTE #1:** This package has been migrated to use Istio Ambient. Minimum version of uds-core required is `0.40.x`
+
 ## Releases
 
 The released packages can be found in [ghcr](https://github.com/defenseunicorns/uds-package-sonarqube/pkgs/container/packages%2Fuds%2Fsonarqube).
