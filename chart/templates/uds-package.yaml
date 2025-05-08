@@ -88,6 +88,8 @@ spec:
           optional: false
         type: "Bearer"
   network:
+    serviceMesh:
+      mode: ambient
     expose:
       - service: sonarqube-sonarqube
         podLabels:
