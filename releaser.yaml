@@ -10,4 +10,4 @@ flavors:
     version: 25.5.0.107428-uds.0
   - name: unicorn
     # renovate-uds: datasource=docker depName=cgr.dev/du-uds-defenseunicorns/sonarqube versioning=docker
-    version: 25.4.0.105899-uds.0
+    version: 25.5.0.107428-uds.0
