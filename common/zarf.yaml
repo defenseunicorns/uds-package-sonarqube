@@ -18,7 +18,7 @@ components:
       - name: sonarqube
         namespace: sonarqube
         url: https://SonarSource.github.io/helm-chart-sonarqube
-        version: 2025.2.0
+        version: 2025.3.0
         valuesFiles:
           - ../values/common-values.yaml
     images:
