@@ -73,5 +73,5 @@ components:
         valuesFiles:
           - values/unicorn-values.yaml
     images:
-      - "cgr.dev/du-uds-defenseunicorns/sonarqube:25.5.0.107428"
-      - "cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37"
+      - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
+      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:25.5.0.107428-community"

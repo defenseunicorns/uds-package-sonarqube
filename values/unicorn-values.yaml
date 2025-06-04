@@ -2,8 +2,22 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Defense-Unicorns-Commercial
 
 image:
-  repository: cgr.dev/du-uds-defenseunicorns/sonarqube
-  tag: 25.5.0.107428
+  repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build
+  tag: 25.5.0.107428-community
 
 initContainers:
-  image: cgr.dev/du-uds-defenseunicorns/busybox-fips:1.37
+  image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
+
+# wget used by default probes not available in registry1 images
+livenessProbe:
+  exec: null
+  httpGet:
+    path: /
+    scheme: HTTP
+    port: 9000
+readinessProbe:
+  exec: null
+  httpGet:
+    path: /api/system/status
+    scheme: HTTP
+    port: 9000
