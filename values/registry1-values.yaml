@@ -3,7 +3,7 @@
 
 image:
   repository: registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build
-  tag: 25.5.0.107428-community
+  tag: 25.6.0.109173-community
 
 initContainers:
   image: registry1.dso.mil/ironbank/big-bang/base:2.1.0
