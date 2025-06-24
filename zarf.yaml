@@ -60,3 +60,18 @@ components:
     images:
       - "sonarqube:25.6.0.109173-community"
       - "busybox:1.37"
+
+  - name: sonarqube
+    required: true
+    description: "Deploy sonarqube"
+    import:
+      path: common
+    only:
+      flavor: unicorn
+    charts:
+      - name: sonarqube
+        valuesFiles:
+          - values/unicorn-values.yaml
+    images:
+      - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
+      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:25.6.0.109173-community"
