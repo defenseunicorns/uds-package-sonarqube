@@ -9,7 +9,7 @@ metadata:
   version: "dev"
   annotations:
     dev.uds.title: SonarQube
-    dev.uds.tagline: '**Clean Code, Under Your Control**'
+    dev.uds.tagline: Clean Code, Under Your Control
     dev.uds.categories: Software Dev, Security, IT Management, Productivity
     dev.uds.keywords: Code Quality, Security Tool, Static Code Analysis, Bug Detection, Vulnerability Detection, Code Smells, Technical Debt Reduction, DevOps Integration, GitHub Integration, GitLab Integration, Azure Pipelines
     dev.uds.icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgeG1sbnM6dj0iaHR0cHM6Ly92ZWN0YS5pby9uYW5vIj48ZyBjbGlwLXBhdGg9InVybCgjQSkiPjxwYXRoIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iLjAxIiBkPSJNMTIsMTJoNTZ2NTZIMTJ6Ii8+PHBhdGggZD0iTTYwLjU1Nyw2OGgtMy4wNjhjMC0yNi4wNTgtMjAuNDA5LTQ3LjI1Ni00NS40ODktNDcuMjU2di0zLjIzMmMyNi43NzIsMCA0OC41NTcsMjIuNjQyIDQ4LjU1Nyw1MC40ODl6bTIuMTIzLTE3LjM4MmMtMy42ODYtMTYuMzQ0LTE2LjI1Ni0yOS45ODUtMzIuMDIyLTM0Ljc1OWwuNzA2LTIuNTkzYzE2LjY0MSw1LjAzOCAyOS45MSwxOS40NDcgMzMuODAxLDM2LjczMWwtMi40ODUuNjIxem0zLjQ1OS0xNS4zNDNjLTMuNzk3LTguNzI1LTEwLjI3Ny0xNi4zMzgtMTguMjI3LTIxLjQzMkw0OC45OCwxMmM4LjMsNS4zMjEgMTUuMDQ4LDEzLjI2IDE5LjAyMSwyMi4zNzhsLTEuODYxLjg5N3oiIGZpbGw9IiM0OTljZDIiLz48L2c+PGRlZnM+PGNsaXBQYXRoPjxwYXRoIGZpbGw9IiNmZmYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEyLDEyKSIgZD0iTTAsMGg1NnY1NkgweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==
@@ -60,18 +60,3 @@ components:
     images:
       - "sonarqube:25.6.0.109173-community"
       - "busybox:1.37"
-
-  - name: sonarqube
-    required: true
-    description: "Deploy sonarqube"
-    import:
-      path: common
-    only:
-      flavor: unicorn
-    charts:
-      - name: sonarqube
-        valuesFiles:
-          - values/unicorn-values.yaml
-    images:
-      - "registry1.dso.mil/ironbank/big-bang/base:2.1.0"
-      - "registry1.dso.mil/ironbank/sonarsource/sonarqube/sonarqube-community-build:25.6.0.109173-community"

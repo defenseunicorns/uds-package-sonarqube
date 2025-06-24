@@ -13,6 +13,13 @@ This package is designed for use as part of a [UDS Software Factory](https://git
 
 SonarQube needs connection to a PostgreSQL instance either in cluster or external. You can learn more about configuring this (and other options) in the [configuration documentation](./docs/configuration.md).
 
+## Flavors
+
+| Flavor    | Description                                                      | Example Creation                     |
+| --------- | ---------------------------------------------------------------- | ------------------------------------ |
+| upstream  | Uses images from docker.io within the package.                   | `zarf package create . -f upstream`  |
+| registry1 | Uses images from registry1.dso.mil within the package.           | `zarf package create . -f registry1` |
+
 ## Releases
 
 The released packages can be found in [ghcr](https://github.com/defenseunicorns/uds-package-sonarqube/pkgs/container/packages%2Fuds%2Fsonarqube).
