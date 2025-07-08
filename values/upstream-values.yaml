@@ -3,7 +3,7 @@
 
 image:
   repository: sonarqube
-  tag: 25.6.0.109173-community
+  tag: 25.7.0.110598-community
 
 initContainers:
   image: busybox:1.37
