@@ -58,7 +58,7 @@ components:
         valuesFiles:
           - values/upstream-values.yaml
     images:
-      - "sonarqube:25.7.0.110598-community"
+      - "sonarqube:25.8.0.112029-community"
       - "busybox:1.37"
 
   - name: sonarqube
